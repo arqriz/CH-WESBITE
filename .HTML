@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Amitabha Foundation Children Home: A safe place to grow</title>
+<meta name="description" content="Amitabha Foundation Children Home: a safe, loving home, education support and a hopeful future for children in need in Malaysia.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amitabha Foundation Children Home">
+<meta property="og:title" content="Amitabha Foundation Children Home: A safe place to grow">
+<meta property="og:description" content="A safe, loving home, education support and a hopeful future for children in need in Malaysia.">
+<meta property="og:locale" content="en_MY">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/af-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<!-- Body font matches Elder Home (Plus Jakarta Sans); display font is Children Home's own (Fraunces) -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  /* ── Amitabha Foundation master-brand tokens (shared with Elder Home) ── */
+  --navy-900:#1a242f;
+  --navy-800:#2c3e50;
+  --brand-red:#ab1a1f;
+  --brand-red-nav:#ab1b25;
+  --ink-900:#0c1a1c;
+  --ink-700:#1f3034;
+  --ink-500:#4d6065;
+  --ink-400:#6e8087;
+  --ink-300:#9aa9ae;
+  --line:#e3ecee;
+  --surface:#ffffff;
+  --r-sm:10px;--r:14px;--r-lg:22px;--r-xl:28px;
+  --shadow-sm:0 1px 2px rgba(10,40,45,.04),0 2px 8px rgba(10,40,45,.04);
+  --shadow:0 4px 16px rgba(10,40,45,.06),0 18px 48px rgba(10,40,45,.06);
+  --shadow-lg:0 24px 64px rgba(10,40,45,.14);
+  --t:.32s cubic-bezier(.4,.0,.2,1);
+  --max:1240px;
+  --header-h:72px;
+  --sans:"Plus Jakarta Sans",system-ui,sans-serif;
+
+  /* ── Children Home programme tokens ── */
+  --display:"Fraunces",Georgia,serif;
+  --leaf-800:#22604f;
+  --leaf-700:#2e7d6b;
+  --leaf-600:#3b9480;
+  --leaf-500:#6bb5a1;
+  --leaf-400:#a5d4c4;
+  --leaf-100:#dcefe7;
+  --leaf-50:#eef7f3;
+  --sun:#f2a93b;
+  --sun-d:#d98e1f;
+  --sun-l:#ffd58a;
+  --bg:#fbf9f3;
+  --cream:#fff6e6;
+  --stone:#f1efe8;
+}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;max-width:100%}
+body{font-family:var(--sans);color:var(--ink-700);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+section{position:relative}
+section[id],#donate{scroll-margin-top:var(--header-h)}
+
+/* Header — always pinned */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow var(--t),background var(--t)}
+header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 18px rgba(10,40,45,.06)}
+.hdr{max-width:var(--max);margin:auto;padding:0 1.5rem;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{height:54px;width:auto;display:block;object-fit:contain}
+.nav{display:flex;gap:.1rem;align-items:center}
+.nav a{font-size:.86rem;font-weight:500;color:var(--ink-700);padding:.5rem .85rem;border-radius:8px;transition:color .3s ease,background .3s ease}
+.nav a:hover{background:rgba(247,230,233,.5);color:var(--brand-red-nav)}
+.nav a.on{color:var(--brand-red-nav)}
+.nav a.on::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--brand-red-nav);margin:2px auto -6px}
+.hdr-r{display:flex;align-items:center;gap:.55rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;font-family:inherit;font-weight:600;font-size:.86rem;padding:.62rem 1.15rem;border-radius:999px;transition:color .3s ease,background .3s ease,border-color .3s ease,box-shadow .3s ease,transform .3s ease;white-space:nowrap}
+.btn-ghost{color:var(--navy-800);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(46,125,107,.1);border-color:var(--leaf-700);color:var(--leaf-700)}
+.btn-primary{background:var(--leaf-700);color:#fff;box-shadow:0 6px 18px rgba(46,125,107,.3)}
+.btn-primary:hover{background:var(--leaf-800)}
+.btn-donate{background:var(--brand-red);color:#fff;animation:donateGlow 2.5s ease-in-out infinite}
+.btn-donate:hover{background:#8f1419}
+.btn-wa{background:#25d366;color:#fff;animation:waGlow 2.5s ease-in-out infinite}
+.btn-wa:hover{background:#1ebe5a}
+.btn-outline-white{color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-outline-white:hover{background:rgba(255,255,255,.1)}
+.btn-lg{padding:.85rem 1.6rem;font-size:.92rem}
+.btn:active{background:var(--brand-red);color:#fff;border-color:var(--brand-red);box-shadow:0 6px 18px rgba(171,26,31,.35)}
+.donate-img{height:1.1em;width:auto;display:block;filter:brightness(0) invert(1) drop-shadow(0 0 4px rgba(255,255,255,.6))}
+@keyframes donateGlow{0%,100%{box-shadow:0 4px 18px rgba(171,26,31,.5),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 6px 28px rgba(171,26,31,.85),0 0 24px rgba(171,26,31,.5),0 0 0 8px rgba(171,26,31,.13)}}
+@keyframes waGlow{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0)}50%{box-shadow:0 6px 28px rgba(37,211,102,.8),0 0 24px rgba(37,211,102,.45),0 0 0 8px rgba(37,211,102,.13)}}
+.burger{display:none;flex-direction:column;gap:5px;padding:.7rem;min-width:44px;min-height:44px;justify-content:center;align-items:center}
+.burger span{width:22px;height:2px;background:var(--navy-800);border-radius:2px;transition:all var(--t)}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mob-menu{display:none;flex-direction:column;background:#fff;border-top:1px solid var(--line);padding:.6rem 1.5rem 1.2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.7rem .3rem;font-size:.95rem;color:var(--ink-700);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.5rem}
+
+/* Hero — full-page slideshow (same dimensions/behaviour as Elder Home) */
+.hero{position:relative;min-height:clamp(380px,60vh,760px);display:flex;align-items:center;overflow:hidden;isolation:isolate;background:#0d1a1c;color:#fff}
+.hero-slideshow{position:absolute;inset:0;z-index:-5}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s ease}
+.hero-slide.active{opacity:1;animation:heroZoom 9s ease-out both}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.hero-overlay{position:absolute;inset:0;z-index:-4;background:linear-gradient(100deg,rgba(12,26,28,.62) 0%,rgba(12,26,28,.32) 55%,rgba(12,26,28,.12) 100%)}
+.hero-arcs{position:absolute;right:-140px;bottom:-220px;width:620px;height:620px;z-index:-3;pointer-events:none;opacity:.5}
+.hero-in{max-width:var(--max);margin:auto;width:100%;padding:clamp(1.8rem,6vw,4.5rem) clamp(.7rem,3.5vw,1.5rem) clamp(2.5rem,8vw,6rem);display:flex;flex-direction:column}
+.hero-in>*{max-width:640px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-bottom:1.6rem;text-shadow:0 1px 6px rgba(0,0,0,.45);animation:rise .7s .15s backwards}
+.hero-eyebrow::before{content:"";width:22px;height:2px;background:var(--sun);border-radius:2px;flex-shrink:0}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.12;letter-spacing:-.02em;color:#fff;margin-bottom:1.4rem;text-wrap:balance;text-shadow:0 1px 0 rgba(0,0,0,.45),0 6px 24px rgba(0,0,0,.25);animation:rise .9s .25s backwards}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--sun-l)}
+.hero-sub{font-size:clamp(.92rem,2.5vw,1.05rem);color:rgba(255,255,255,.85);max-width:560px;line-height:1.7;margin-bottom:2.2rem;text-shadow:0 1px 4px rgba(0,0,0,.3);animation:rise .8s .4s backwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero-items{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.4rem;max-width:720px!important}
+.hi-card{background:rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:.85rem 1.05rem;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;text-align:left;transition:background .2s,border-color .2s,transform .18s;animation:rise .7s backwards}
+.hi-card:nth-child(1){animation-delay:.55s}.hi-card:nth-child(2){animation-delay:.63s}.hi-card:nth-child(3){animation-delay:.71s}.hi-card:nth-child(4){animation-delay:.79s}.hi-card:nth-child(5){animation-delay:.87s}
+.hi-card:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.34);transform:translateY(-3px)}
+.hi-card>i{font-size:1.05rem;color:var(--sun-l)}
+.hi-card .hi-title{font-size:.86rem;font-weight:600;line-height:1.3}
+.hi-card p,.hi-card .hi-link{display:none}
+.hero-dots{position:absolute;bottom:3.8rem;left:50%;transform:translateX(-50%);display:flex;gap:.5rem;align-items:center;z-index:10}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);padding:0;transition:width .4s ease,background .4s ease}
+.hero-dot.active{width:24px;border-radius:99px;background:rgba(255,255,255,.92)}
+.scroll-cue{position:absolute;bottom:1.8rem;left:50%;transform:translateX(-50%)}
+.scroll-cue .bar{width:1px;height:38px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.6))}
+.scroll-cue .bar::after{content:"";display:block;width:1px;height:14px;background:var(--sun);animation:slide 1.8s ease-in-out infinite}
+@keyframes slide{0%{transform:translateY(-14px);opacity:0}40%{opacity:1}100%{transform:translateY(38px);opacity:0}}
+
+/* Hero card modal */
+.hi-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:rgba(0,0,0,0);pointer-events:none;transition:background .35s ease}
+.hi-modal.on{background:rgba(0,0,0,.5);pointer-events:auto}
+.hi-modal .hi-card{width:min(24rem,88vw);background:rgba(30,30,30,.74);backdrop-filter:blur(28px) saturate(160%);-webkit-backdrop-filter:blur(28px) saturate(160%);border-radius:22px;padding:2.2rem 2rem;gap:.65rem;box-shadow:0 32px 80px rgba(0,0,0,.55);opacity:0;transform:scale(.9) translateY(14px);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.3,1.2);animation:none}
+.hi-modal.on .hi-card{opacity:1;transform:none}
+.hi-modal .hi-card:hover{transform:none}
+.hi-modal .hi-card>i{font-size:2.2rem}
+.hi-modal .hi-card .hi-title{font-size:1.4rem;font-weight:700;line-height:1.2}
+.hi-modal .hi-card p{display:block;font-size:.96rem;color:rgba(255,255,255,.8);line-height:1.7;border-top:1px solid rgba(255,255,255,.18);padding-top:.9rem;margin-top:.1rem}
+.hi-modal .hi-card .hi-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:600;color:var(--sun-l)}
+.hi-modal .hi-card .hi-link:hover{text-decoration:underline}
+
+/* Section helpers */
+.sec{padding:clamp(3rem,7vw,6rem) 0;position:relative}
+.wrap{max-width:var(--max);margin:auto;padding:0 clamp(.9rem,3.5vw,1.5rem)}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf-700);margin-bottom:.9rem}
+.eyebrow::before{content:"";width:24px;height:2px;background:var(--sun);border-radius:2px}
+h2.section-h{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,4.2vw,2.8rem);line-height:1.15;letter-spacing:-.015em;color:var(--ink-900);margin-bottom:.9rem;text-wrap:balance}
+h2.section-h em{font-style:italic;color:var(--leaf-700);font-weight:500}
+.section-p{font-size:clamp(.92rem,2vw,1rem);color:var(--ink-500);line-height:1.7;max-width:620px}
+.sh{margin-bottom:3.2rem}
+.sh.c{text-align:center}.sh.c .eyebrow{justify-content:center}.sh.c .section-p{margin:auto}
+
+/* Key support */
+.support-band{background:var(--bg)}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1.2rem}
+.svc-card{background:#fff;border-radius:var(--r-lg);border:1px solid var(--line);padding:1.9rem 1.6rem 1.6rem;display:flex;flex-direction:column;transition:transform var(--t),box-shadow var(--t),border-color var(--t)}
+.svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--leaf-100)}
+.svc-ic{width:54px;height:54px;border-radius:16px;background:var(--leaf-50);color:var(--leaf-700);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:1.2rem;position:relative;transition:transform var(--t),background var(--t),color var(--t)}
+.svc-ic::after{content:"";position:absolute;right:-4px;top:-4px;width:12px;height:12px;border-radius:50%;background:var(--sun);border:2px solid #fff}
+.svc-card:hover .svc-ic{background:var(--leaf-700);color:#fff;transform:rotate(-6deg) scale(1.06)}
+.svc-card h3{font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--ink-900);margin-bottom:.5rem;line-height:1.25}
+.svc-card p{font-size:.9rem;color:var(--ink-500);line-height:1.65;flex:1;margin-bottom:1.2rem}
+.svc-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--leaf-700);font-weight:600;font-size:.85rem;padding-top:1rem;border-top:1px solid var(--line);transition:gap var(--t)}
+.svc-card:hover .svc-link{gap:.7rem}
+
+/* Impact / figure bar */
+.stats{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-in{max-width:var(--max);margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:1.8rem 1.4rem;display:flex;align-items:center;gap:1rem;border-right:1px solid var(--line);transition:background var(--t)}
+.stat:last-child{border-right:none}
+.stat:hover{background:linear-gradient(175deg,#fff 0%,var(--leaf-50) 100%)}
+.stat-ic{width:46px;height:46px;border-radius:12px;flex-shrink:0;background:var(--leaf-50);color:var(--leaf-700);display:flex;align-items:center;justify-content:center;font-size:1.05rem;transition:transform .35s ease}
+.stat:hover .stat-ic{transform:scale(1.12) rotate(-5deg)}
+.stat-n{font-family:var(--display);font-size:1.75rem;font-weight:600;color:var(--navy-800);line-height:1.1}
+.stat-n sup{font-size:.7em;color:var(--sun-d)}
+.stat-l{font-size:.74rem;color:var(--ink-400);font-weight:500;letter-spacing:.04em;text-transform:uppercase}
+
+/* About */
+.sec-about{background:var(--stone)}
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:5rem;align-items:center}
+.about-media{position:relative}
+.about-img{position:relative;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-lg);background:var(--leaf-100) center/cover no-repeat}
+.about-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.25) 100%)}
+.about-card{position:absolute;left:-26px;bottom:34px;background:#fff;border-radius:18px;padding:1.1rem 1.3rem;box-shadow:0 24px 60px rgba(10,40,45,.16);min-width:230px;display:flex;align-items:center;gap:.9rem;z-index:2}
+.about-card .ic{width:46px;height:46px;border-radius:12px;background:var(--leaf-700);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.about-card .n{font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--ink-900);line-height:1.2}
+.about-card .l{font-size:.74rem;color:var(--ink-400);font-weight:500;margin-top:.18rem}
+.values{display:flex;flex-direction:column;gap:1rem;margin-top:1.8rem}
+.v-row{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-top:1px solid rgba(0,0,0,.07)}
+.v-row:first-child{border-top:none;padding-top:.4rem}
+.v-ic{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:#fff;color:var(--leaf-700);display:flex;align-items:center;justify-content:center;font-size:.95rem;box-shadow:var(--shadow-sm)}
+.v-row strong{display:block;color:var(--ink-900);font-weight:600;margin-bottom:.15rem}
+.v-row p{font-size:.9rem;color:var(--ink-500);line-height:1.55}
+
+/* Gallery — Life at the Home */
+.gallery-band{background:var(--cream);overflow:hidden}
+.gallery-band::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 400px at 90% 10%,rgba(242,169,59,.16),transparent 60%),radial-gradient(500px 400px at 5% 90%,rgba(107,181,161,.18),transparent 60%);pointer-events:none}
+.gallery-band .wrap{position:relative}
+.gal-track-wrap{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-lg),0 0 0 1px rgba(46,125,107,.15);background:#000}
+.gal-track{display:flex;transition:transform .6s cubic-bezier(.4,.0,.2,1);will-change:transform}
+.gal-slide{flex:0 0 100%;position:relative;aspect-ratio:16/9;display:flex;align-items:flex-end;overflow:hidden}
+.gal-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal-cap{position:relative;z-index:2;width:100%;padding:2.4rem 2.4rem 2rem;background:linear-gradient(0deg,rgba(26,36,47,.85) 0%,rgba(26,36,47,.5) 60%,transparent 100%);color:#fff}
+.gal-cap-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sun-l);margin-bottom:.6rem}
+.gal-cap h3{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.2;margin-bottom:.3rem}
+.gal-cap p{font-size:.95rem;color:rgba(255,255,255,.8);max-width:580px;line-height:1.6}
+.gal-controls{display:flex;align-items:center;justify-content:space-between;margin-top:1.4rem;gap:1rem}
+.gal-dots{display:flex;gap:.45rem;flex:1;justify-content:center}
+.gal-dot{width:8px;height:8px;border-radius:50%;background:var(--leaf-100);padding:0;transition:all var(--t)}
+.gal-dot.on{width:28px;border-radius:99px;background:var(--leaf-700)}
+.gal-arrow{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--navy-800);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all var(--t)}
+.gal-arrow:hover{background:var(--brand-red);color:#fff;border-color:var(--brand-red);transform:translateY(-2px);box-shadow:0 6px 18px rgba(171,26,31,.35)}
+.gal-thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(120px,100%),1fr));gap:.6rem;margin-top:1.4rem}
+.gal-thumb{aspect-ratio:4/3;border-radius:10px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all var(--t);opacity:.55}
+.gal-thumb:hover{opacity:.9}
+.gal-thumb.on{opacity:1;border-color:var(--sun);box-shadow:0 6px 18px rgba(242,169,59,.4)}
+.gal-thumb img{width:100%;height:100%;object-fit:cover}
+
+/* Stories & activities */
+.stories-band{background:var(--bg)}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.story-card{background:#fff;border-radius:var(--r-lg);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:all var(--t)}
+.story-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--leaf-100)}
+.story-img{aspect-ratio:16/10;overflow:hidden;background:var(--leaf-100)}
+.story-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.story-card:hover .story-img img{transform:scale(1.05)}
+.story-body{padding:1.6rem;display:flex;flex-direction:column;flex:1}
+.story-cat{align-self:flex-start;display:inline-flex;align-items:center;gap:.4rem;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .7rem;border-radius:999px;background:var(--leaf-50);color:var(--leaf-700);margin-bottom:.9rem}
+.story-q{font-family:var(--display);font-style:italic;font-size:1.08rem;color:var(--ink-700);line-height:1.6;margin-bottom:1.3rem;flex:1}
+.story-q::before{content:"\201C";display:block;font-size:2.6rem;line-height:.8;color:var(--sun);font-style:normal}
+.story-attr{display:flex;align-items:center;gap:.8rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.story-av{width:40px;height:40px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--leaf-500),var(--leaf-700));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.9rem}
+.story-name{font-weight:600;color:var(--ink-900);font-size:.9rem}
+.story-meta{font-size:.76rem;color:var(--ink-400)}
+
+/* News */
+.news-band{background:var(--stone)}
+.news-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.news-head .sh{margin:0;max-width:640px}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.news-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:all var(--t)}
+.news-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--leaf-100)}
+.news-img{height:200px;overflow:hidden;background:var(--leaf-100)}
+.news-img img{width:100%;height:100%;object-fit:cover}
+.news-body{padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.news-meta{display:flex;gap:.7rem;align-items:center;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--leaf-700)}
+.news-meta .tag{background:var(--leaf-50);padding:.3rem .65rem;border-radius:99px}
+.news-meta .date{color:var(--ink-400);letter-spacing:.08em}
+.news-card h3{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.3;color:var(--ink-900)}
+.news-card p{font-size:.92rem;color:var(--ink-500);line-height:1.6;flex:1}
+.news-foot{margin-top:.5rem;padding-top:1rem;border-top:1px solid var(--line)}
+.news-foot a{color:var(--leaf-700);font-weight:600;font-size:.86rem;display:inline-flex;align-items:center;gap:.4rem;transition:gap var(--t)}
+.news-foot a:hover{gap:.7rem}
+
+/* Mini FAQ (accordion) */
+.mini-faq{padding:clamp(3rem,7vw,5.5rem) 0;background:var(--cream);position:relative}
+.mini-faq::before{content:'';position:absolute;inset:0;background:radial-gradient(600px 400px at 90% 10%,rgba(242,169,59,.12),transparent 60%);pointer-events:none}
+.mini-faq .wrap{position:relative}
+.mfaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:2.4rem;align-items:start}
+.mfaq-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
+.mfaq-card:hover{border-color:var(--leaf-400);box-shadow:var(--shadow-sm)}
+.mfaq-card.open{border-color:var(--leaf-500);box-shadow:0 2px 16px rgba(46,125,107,.1)}
+.mfaq-q{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.3rem;cursor:pointer;user-select:none;width:100%;text-align:left}
+.mfaq-q-text{font-size:.93rem;font-weight:600;color:var(--ink-900);line-height:1.4;flex:1}
+.mfaq-icon{width:22px;height:22px;flex-shrink:0;border-radius:50%;background:var(--leaf-50);color:var(--leaf-700);display:flex;align-items:center;justify-content:center;font-size:.6rem;transition:transform var(--t),background var(--t)}
+.mfaq-card.open .mfaq-icon{transform:rotate(180deg);background:var(--leaf-700);color:#fff}
+.mfaq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mfaq-a-inner{padding:.9rem 1.3rem 1.1rem;border-top:1px solid var(--line);font-size:.88rem;color:var(--ink-500);line-height:1.75}
+.mfaq-a-inner strong{color:var(--ink-700)}
+.mfaq-foot{display:flex;justify-content:center}
+
+/* CTA band */
+.cta-band{background:radial-gradient(700px 500px at 80% 30%,rgba(242,169,59,.28),transparent 60%),linear-gradient(135deg,var(--navy-800),var(--leaf-800));color:#fff;padding:clamp(3rem,6vw,5rem) 0;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+.cta-band .hero-arcs{left:50%;right:auto;transform:translateX(-50%);bottom:-420px;width:820px;height:820px;opacity:.35}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,3.8vw,2.8rem);line-height:1.15;margin-bottom:.8rem;text-wrap:balance}
+.cta-band h2 em{color:var(--sun-l);font-style:italic}
+.cta-band p{color:rgba(255,255,255,.8);font-size:1rem;max-width:560px;margin:0 auto 2rem}
+.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+/* Footer — same colour & structure as Elder Home */
+footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
+.foot-top{max-width:var(--max);margin:auto;padding:clamp(2rem,5vw,3.5rem) clamp(.9rem,3.5vw,1.5rem) 2.5rem;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:2.5rem}
+.foot-brand img{height:54px;width:auto;margin-bottom:1rem;background:#fff;border-radius:10px;padding:6px 10px}
+.foot-brand p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.45);max-width:260px;margin-bottom:1.1rem}
+.foot-soc{display:flex;gap:.4rem}
+.foot-soc a{width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;transition:all var(--t)}
+.foot-soc a:hover{background:var(--leaf-700);color:#fff;border-color:var(--leaf-700);transform:translateY(-2px)}
+.foot-col h4{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:1rem}
+.foot-col a,.foot-col .fci{display:flex;align-items:flex-start;gap:.5rem;font-size:.83rem;color:rgba(255,255,255,.45);margin-bottom:.55rem;transition:color var(--t);line-height:1.5}
+.foot-col a:hover{color:rgba(255,255,255,.85)}
+.foot-col i{color:var(--leaf-400);font-size:.75rem;margin-top:.25rem;flex-shrink:0}
+.foot-col a.here{color:rgba(255,255,255,.85);font-weight:600}
+.foot-col h4 a{display:inline;font-size:inherit;color:inherit;margin:0}
+.foot-bot{max-width:var(--max);margin:auto;padding:1.1rem clamp(.9rem,3.5vw,1.5rem);border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+.foot-bot p{font-size:.74rem;color:rgba(255,255,255,.28)}
+
+/* Floating CTA — same style & position as Elder Home */
+.float-bar{position:fixed;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:999;display:flex;gap:.65rem;align-items:center;filter:drop-shadow(0 8px 20px rgba(0,0,0,.16))}
+.float-wa,.float-donate{display:inline-flex;align-items:center;gap:.5rem;padding:.78rem 1.55rem;border-radius:999px;font-weight:700;font-size:.92rem;white-space:nowrap;transition:all var(--t);color:#fff}
+.float-wa{background:#25d366;box-shadow:0 6px 24px rgba(37,211,102,.42)}
+.float-wa:hover{background:#1ebe5a;transform:translateY(-3px)}
+.float-donate{position:relative;background:linear-gradient(135deg,#c52525,var(--brand-red));box-shadow:0 6px 28px rgba(171,26,31,.6);animation:donatePulse 2.8s ease-in-out infinite}
+.float-donate:hover{background:#8f1419;transform:translateY(-3px);animation-play-state:paused}
+@keyframes donatePulse{0%,100%{box-shadow:0 6px 28px rgba(171,26,31,.6),0 0 0 0 rgba(171,26,31,0)}50%{box-shadow:0 8px 36px rgba(171,26,31,.8),0 0 0 10px rgba(171,26,31,.12)}}
+.donate-tip{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(6px);background:rgba(8,8,12,.84);backdrop-filter:blur(14px);color:rgba(255,255,255,.92);font-size:.7rem;font-weight:400;font-style:italic;padding:.44rem .95rem;border-radius:10px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .24s ease,transform .24s ease}
+.float-donate:hover .donate-tip{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Scroll reveal */
+.aos{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.aos-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.aos-r{opacity:0;transform:translateX(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.aos.in,.aos-l.in,.aos-r.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* Responsive — same breakpoints as Elder Home */
+@media(max-width:1024px){
+  .nav{display:none}
+  .burger{display:flex}
+  .hdr-r .btn-ghost{display:none}
+  .stats-in{grid-template-columns:1fr 1fr}
+  .stat{border-bottom:1px solid var(--line)}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .story-grid{grid-template-columns:1fr 1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .news-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .mfaq-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .brand img{height:44px}
+  .stat{border-right:none}
+  .story-grid,.news-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .foot-bot{flex-direction:column;text-align:center}
+  .about-card{left:50%;transform:translateX(-50%);bottom:-22px}
+  .about-media{padding-bottom:2rem}
+  .gal-slide{aspect-ratio:4/5}
+  .gal-cap{padding:1.5rem 1.4rem 1.3rem}
+  .gal-cap h3{font-size:1.3rem}
+  .news-head{flex-direction:column;align-items:flex-start}
+  .float-bar{left:auto;right:1.2rem;transform:none;bottom:1rem;flex-direction:column;gap:.5rem}
+  .float-wa,.float-donate{width:50px;height:50px;padding:0;border-radius:50%;justify-content:center;font-size:1.3rem}
+  .fl-label,.donate-tip{display:none}
+  .hero-in{padding-bottom:4.5rem}
+  .hero-dots{bottom:1.6rem}
+  .scroll-cue{display:none}
+}
+@media(max-width:480px){
+  .cta-btns>*{width:100%;justify-content:center}
+  .stats-in{grid-template-columns:1fr 1fr}
+  .stat{flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 1rem}
+}
+@media(max-width:360px){
+  .hdr .btn-donate span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .aos,.aos-l,.aos-r{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="hdr">
+    <a href="#home" class="brand">
+      <img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home">
+    </a>
+    <nav class="nav">
+      <a href="#home" class="on" data-i18n="nav.home">Home</a>
+      <a href="#support" data-i18n="nav.care">Our Care</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#stories" data-i18n="nav.stories">Stories</a>
+      <a href="#news" data-i18n="nav.news">News</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+    <div class="hdr-r">
+      <button class="lang-toggle btn btn-ghost">中文</button>
+      <a href="#" data-wa="help" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+      <a href="#" data-donate class="btn btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="nav.donate">Donate</span></a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mob-menu" id="mob-menu">
+    <a href="#home" data-i18n="nav.home">Home</a>
+    <a href="#support" data-i18n="nav.care">Our Care</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#stories" data-i18n="nav.stories">Stories</a>
+    <a href="#news" data-i18n="nav.news">News</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="#" data-wa="help" target="_blank" rel="noopener" style="color:var(--leaf-700);font-weight:700"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="nav.seekHelp">Seek Help</span></a>
+    <a href="#" data-donate target="_blank" rel="noopener" style="color:var(--brand-red);font-weight:700"><i class="fa fa-heart"></i> <span data-i18n="nav.donateNow">Donate Now</span></a>
+    <button class="lang-toggle btn btn-ghost" style="width:100%;margin-top:.6rem;justify-content:flex-start">中文</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<!-- PLACEHOLDER PHOTOS (Unsplash licence): replace with Children Home photography, with guardian consent. -->
+<section class="hero" id="home">
+  <div class="hero-slideshow">
+    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1920&q=75&auto=format&fit=crop')"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1920&q=75&auto=format&fit=crop"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=1920&q=75&auto=format&fit=crop"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?w=1920&q=75&auto=format&fit=crop"></div>
+    <div class="hero-slide" data-bg="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1920&q=75&auto=format&fit=crop"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <svg class="hero-arcs" viewBox="0 0 600 600" aria-hidden="true"><g fill="none" stroke="#ffd58a" stroke-width="1.2"><circle cx="300" cy="300" r="120" opacity=".9"/><circle cx="300" cy="300" r="170" opacity=".7"/><circle cx="300" cy="300" r="220" opacity=".5"/><circle cx="300" cy="300" r="270" opacity=".3"/></g><circle cx="300" cy="300" r="70" fill="#f2a93b" opacity=".35"/></svg>
+
+  <div class="hero-in">
+    <div class="hero-eyebrow" data-i18n="hero.eyebrow">Amitabha Foundation · Children Home</div>
+    <h1 data-i18n-html="hero.h1">A safe place to grow,<br><em>a future to believe in</em>.</h1>
+    <p class="hero-sub" data-i18n="hero.sub">Amitabha Foundation Children Home gives children in need a loving home, steady schooling and the everyday care that helps them grow up confident, kind and hopeful.</p>
+    <div class="hero-items">
+      <button class="hi-card">
+        <i class="fa fa-house-chimney-user"></i>
+        <span class="hi-title" data-i18n="hero.c1.title">Explore our care</span>
+        <p data-i18n="hero.c1.body">A safe home, school support, healthcare and mentoring: everything a child needs to feel secure and to thrive.</p>
+        <a class="hi-link" href="#support"><i class="fa fa-arrow-right"></i> <span data-i18n="hero.c1.link">See how we care</span></a>
+      </button>
+      <button class="hi-card">
+        <i class="fa fa-comments"></i>
+        <span class="hi-title" data-i18n="hero.c2.title">Speak to us</span>
+        <p data-i18n="hero.c2.body">Know a child who needs a safe home, or want to sponsor, volunteer or visit? Our team is happy to talk on WhatsApp.</p>
+        <a class="hi-link" href="#" data-wa="help" target="_blank" rel="noopener"><i class="fa fa-arrow-right"></i> <span data-i18n="hero.c2.link">Chat on WhatsApp</span></a>
+      </button>
+      <button class="hi-card">
+        <i class="fa fa-book-open-reader"></i>
+        <span class="hi-title" data-i18n="hero.c3.title">Education first</span>
+        <p data-i18n="hero.c3.body">Every child attends school. We cover fees, uniforms and books, and run evening homework and tuition sessions.</p>
+      </button>
+      <button class="hi-card">
+        <i class="fa fa-bowl-rice"></i>
+        <span class="hi-title" data-i18n="hero.c4.title">Nourishing meals</span>
+        <p data-i18n="hero.c4.body">Balanced, home-cooked meals every day, planned for growing bodies and shared together at the family table.</p>
+      </button>
+      <button class="hi-card">
+        <i class="fa fa-seedling"></i>
+        <span class="hi-title" data-i18n="hero.c5.title">Values for life</span>
+        <p data-i18n="hero.c5.body">Kindness, gratitude and mindfulness are part of daily life, alongside life skills that prepare each child for adulthood.</p>
+      </button>
+    </div>
+  </div>
+
+  <div class="hero-dots" id="heroDots"></div>
+  <div class="scroll-cue"><div class="bar"></div></div>
+</section>
+
+<!-- KEY SUPPORT -->
+<section class="sec support-band" id="support">
+  <div class="wrap">
+    <div class="sh c">
+      <div class="eyebrow aos" data-i18n="sup.eyebrow">How we care</div>
+      <h2 class="section-h aos d1" data-i18n-html="sup.h2">Everything a child needs to <em>grow well</em></h2>
+      <p class="section-p aos d2" data-i18n="sup.p">Our care goes beyond a roof and a bed. We look after the whole child, from today’s homework to tomorrow’s dreams.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card aos">
+        <div class="svc-ic"><i class="fa fa-house-chimney-user"></i></div>
+        <h3 data-i18n="sup.s1.h3">A safe, loving home</h3>
+        <p data-i18n="sup.s1.p">Round-the-clock care from caregivers who know each child by name, with a warm bed, clean clothes and a predictable routine.</p>
+        <a class="svc-link" href="#about"><span data-i18n="sup.more">Learn more</span> <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card aos d1">
+        <div class="svc-ic"><i class="fa fa-graduation-cap"></i></div>
+        <h3 data-i18n="sup.s2.h3">Education support</h3>
+        <p data-i18n="sup.s2.p">School fees, uniforms, books and transport, plus daily homework time and tuition so no child falls behind.</p>
+        <a class="svc-link" href="#stories"><span data-i18n="sup.more">Learn more</span> <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card aos d2">
+        <div class="svc-ic"><i class="fa fa-heart-pulse"></i></div>
+        <h3 data-i18n="sup.s3.h3">Health &amp; nutrition</h3>
+        <p data-i18n="sup.s3.p">Nutritious daily meals, regular health check-ups, dental care and prompt medical attention whenever it is needed.</p>
+        <a class="svc-link" href="#faq"><span data-i18n="sup.more">Learn more</span> <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card aos d3">
+        <div class="svc-ic"><i class="fa fa-hand-holding-heart"></i></div>
+        <h3 data-i18n="sup.s4.h3">Emotional wellbeing</h3>
+        <p data-i18n="sup.s4.p">Counselling, mentoring and patient listening help children heal, build trust and feel truly at home.</p>
+        <a class="svc-link" href="#stories"><span data-i18n="sup.more">Learn more</span> <i class="fa fa-arrow-right"></i></a>
+      </div>
+      <div class="svc-card aos d4">
+        <div class="svc-ic"><i class="fa fa-seedling"></i></div>
+        <h3 data-i18n="sup.s5.h3">Values &amp; life skills</h3>
+        <p data-i18n="sup.s5.p">Character building, mindfulness and practical skills like cooking and budgeting prepare them for independent adult life.</p>
+        <a class="svc-link" href="#news"><span data-i18n="sup.more">Learn more</span> <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT FIGURES -->
+<!-- PLACEHOLDER FIGURES: confirm every number with the Children Home before going live. -->
+<div class="stats">
+  <div class="stats-in">
+    <div class="stat aos"><div class="stat-ic"><i class="fa fa-calendar-check"></i></div><div><div class="stat-n">20<sup data-i18n="stat.yrs">yrs</sup></div><div class="stat-l" data-i18n="stat.years">Of nurturing care</div></div></div>
+    <div class="stat aos d1"><div class="stat-ic"><i class="fa fa-children"></i></div><div><div class="stat-n">60<sup>+</sup></div><div class="stat-l" data-i18n="stat.children">Children in our care</div></div></div>
+    <div class="stat aos d2"><div class="stat-ic"><i class="fa fa-school"></i></div><div><div class="stat-n">100<sup>%</sup></div><div class="stat-l" data-i18n="stat.school">Attending school</div></div></div>
+    <div class="stat aos d3"><div class="stat-ic"><i class="fa fa-bowl-food"></i></div><div><div class="stat-n">65,000<sup>+</sup></div><div class="stat-l" data-i18n="stat.meals">Meals served / year</div></div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="sec sec-about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-media aos-l">
+        <div class="about-img" style="background-image:url('https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=1200&q=75&auto=format&fit=crop')"></div>
+        <div class="about-card">
+          <div class="ic"><i class="fa fa-sun"></i></div>
+          <div><div class="n" data-i18n="about.card.n">Every child, every day</div><div class="l" data-i18n="about.card.l">Cared for like family</div></div>
+        </div>
+      </div>
+      <div class="aos-r d1">
+        <div class="eyebrow" data-i18n="about.eyebrow">Who we are</div>
+        <h2 class="section-h" data-i18n-html="about.h2">A home where children are <em>seen, safe and loved</em>.</h2>
+        <p class="section-p" data-i18n="about.p">Amitabha Foundation Children Home is part of the Amitabha Foundation family of care. We welcome children who cannot safely live at home, whether through poverty, loss or difficult family circumstances, and walk with them until they are ready to stand on their own.</p>
+        <div class="values">
+          <div class="v-row">
+            <div class="v-ic"><i class="fa fa-shield-heart"></i></div>
+            <div><strong data-i18n="about.v1.t">Safety first, always</strong><p data-i18n="about.v1.p">Clear child-protection practices, trained caregivers and a calm, secure home.</p></div>
+          </div>
+          <div class="v-row">
+            <div class="v-ic"><i class="fa fa-people-roof"></i></div>
+            <div><strong data-i18n="about.v2.t">Family, not an institution</strong><p data-i18n="about.v2.p">Shared meals, birthdays and festivals, celebrated together like any family.</p></div>
+          </div>
+          <div class="v-row">
+            <div class="v-ic"><i class="fa fa-receipt"></i></div>
+            <div><strong data-i18n="about.v3.t">Transparent giving</strong><p data-i18n="about.v3.p">Every donation is tax-deductible and traceable to the care it funds.</p></div>
+          </div>
+        </div>
+        <a href="#stories" class="btn btn-primary btn-lg" style="margin-top:1.8rem"><span data-i18n="about.cta">Read their stories</span> <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFE AT THE HOME -->
+<section class="sec gallery-band" id="gallery">
+  <div class="wrap">
+    <div class="sh c">
+      <div class="eyebrow aos" data-i18n="gal.eyebrow">Life at the Home</div>
+      <h2 class="section-h aos d1" data-i18n-html="gal.h2">Ordinary days, full of <em>small victories</em></h2>
+      <p class="section-p aos d2" data-i18n="gal.p">Homework at the long table, games in the courtyard, quiet reading before bed. A glimpse of the everyday moments that make this place home.</p>
+    </div>
+    <div class="gal-track-wrap aos d3" id="gal">
+      <div class="gal-track" id="galTrack">
+        <div class="gal-slide">
+          <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=1600&q=75&auto=format&fit=crop" alt="A child doing homework with a tutor" loading="lazy">
+          <div class="gal-cap"><div class="gal-cap-eyebrow"><i class="fa fa-book-open"></i> <span data-i18n="gal.s1.e">Homework hour</span></div><h3 data-i18n="gal.s1.h">Learning, side by side</h3><p data-i18n="gal.s1.p">Every evening, volunteers and caregivers sit with the children to work through homework, one question at a time.</p></div>
+        </div>
+        <div class="gal-slide">
+          <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=1600&q=75&auto=format&fit=crop" alt="Children studying together at a table" loading="lazy">
+          <div class="gal-cap"><div class="gal-cap-eyebrow"><i class="fa fa-pencil"></i> <span data-i18n="gal.s2.e">Study together</span></div><h3 data-i18n="gal.s2.h">Older children helping younger ones</h3><p data-i18n="gal.s2.p">Big brothers and sisters lend a hand with reading and sums, building patience and responsibility along the way.</p></div>
+        </div>
+        <div class="gal-slide">
+          <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1600&q=75&auto=format&fit=crop" alt="Children playing outdoors among trees" loading="lazy">
+          <div class="gal-cap"><div class="gal-cap-eyebrow"><i class="fa fa-futbol"></i> <span data-i18n="gal.s3.e">Play &amp; outdoors</span></div><h3 data-i18n="gal.s3.h">Room to run and laugh</h3><p data-i18n="gal.s3.p">Sports, outings and free play are as important as lessons. Childhood should feel like childhood.</p></div>
+        </div>
+        <div class="gal-slide">
+          <img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=1600&q=75&auto=format&fit=crop" alt="Children walking to school with backpacks" loading="lazy">
+          <div class="gal-cap"><div class="gal-cap-eyebrow"><i class="fa fa-school"></i> <span data-i18n="gal.s4.e">School days</span></div><h3 data-i18n="gal.s4.h">Ready for school, every morning</h3><p data-i18n="gal.s4.p">Uniforms pressed, bags packed, breakfast eaten: a steady routine gives every child a confident start to the day.</p></div>
+        </div>
+        <div class="gal-slide">
+          <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1600&q=75&auto=format&fit=crop" alt="A group of smiling children together" loading="lazy">
+          <div class="gal-cap"><div class="gal-cap-eyebrow"><i class="fa fa-people-group"></i> <span data-i18n="gal.s5.e">One family</span></div><h3 data-i18n="gal.s5.h">Growing up together</h3><p data-i18n="gal.s5.p">Festivals, birthdays and everyday kindness turn a group of children into brothers and sisters.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="gal-controls aos d4">
+      <button class="gal-arrow" id="galPrev" aria-label="Previous"><i class="fa fa-chevron-left"></i></button>
+      <div class="gal-dots" id="galDots"></div>
+      <button class="gal-arrow" id="galNext" aria-label="Next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    <div class="gal-thumbs" id="galThumbs">
+      <div class="gal-thumb on"><img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=320&q=60&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="gal-thumb"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=320&q=60&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="gal-thumb"><img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=320&q=60&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="gal-thumb"><img src="https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?w=320&q=60&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="gal-thumb"><img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=320&q=60&auto=format&fit=crop" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES & ACTIVITIES -->
+<!-- SAMPLE STORIES: illustrative only. Replace with real, consented stories; use first names or pseudonyms only. -->
+<section class="sec stories-band" id="stories">
+  <div class="wrap">
+    <div class="sh c">
+      <div class="eyebrow aos" data-i18n="st.eyebrow">Stories &amp; Activities</div>
+      <h2 class="section-h aos d1" data-i18n-html="st.h2">Little steps, <em>big changes</em></h2>
+      <p class="section-p aos d2" data-i18n="st.p">Stories from our children, caregivers and volunteers. Names are changed to protect each child’s privacy.</p>
+    </div>
+    <div class="story-grid">
+      <article class="story-card aos">
+        <div class="story-img"><img src="https://images.unsplash.com/photo-1560785496-3c9d27877182?w=900&q=70&auto=format&fit=crop" alt="A boy concentrating on his schoolwork" loading="lazy"></div>
+        <div class="story-body">
+          <span class="story-cat"><i class="fa fa-graduation-cap"></i> <span data-i18n="st.c1.cat">Education</span></span>
+          <p class="story-q" data-i18n="st.c1.q">I used to be scared of maths. Now I help the younger ones with their sums after dinner.</p>
+          <div class="story-attr"><div class="story-av"><i class="fa fa-user"></i></div><div><div class="story-name" data-i18n="st.c1.n">“Wei”, age 12</div><div class="story-meta" data-i18n="st.c1.m">Living with us for 4 years</div></div></div>
+        </div>
+      </article>
+      <article class="story-card aos d1">
+        <div class="story-img"><img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=900&q=70&auto=format&fit=crop" alt="Children writing at a shared desk" loading="lazy"></div>
+        <div class="story-body">
+          <span class="story-cat"><i class="fa fa-hands-holding-child"></i> <span data-i18n="st.c2.cat">Volunteering</span></span>
+          <p class="story-q" data-i18n="st.c2.q">I came to teach English on Saturdays. Two years later, the children have taught me far more about resilience.</p>
+          <div class="story-attr"><div class="story-av"><i class="fa fa-user"></i></div><div><div class="story-name" data-i18n="st.c2.n">Mei Ling</div><div class="story-meta" data-i18n="st.c2.m">Weekend tutor volunteer</div></div></div>
+        </div>
+      </article>
+      <article class="story-card aos d2">
+        <div class="story-img"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=900&q=70&auto=format&fit=crop" alt="A joyful child after an art activity" loading="lazy"></div>
+        <div class="story-body">
+          <span class="story-cat"><i class="fa fa-palette"></i> <span data-i18n="st.c3.cat">Activities</span></span>
+          <p class="story-q" data-i18n="st.c3.q">Art afternoons give the quieter children a voice. Some of their best stories come out in colour first.</p>
+          <div class="story-attr"><div class="story-av"><i class="fa fa-user"></i></div><div><div class="story-name" data-i18n="st.c3.n">Caregiver team</div><div class="story-meta" data-i18n="st.c3.m">Children Home staff</div></div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<!-- SAMPLE NEWS: replace with real updates. -->
+<section class="sec news-band" id="news">
+  <div class="wrap">
+    <div class="news-head">
+      <div class="sh">
+        <div class="eyebrow" data-i18n="news.eyebrow">News &amp; Updates</div>
+        <h2 class="section-h" data-i18n-html="news.h2">Latest from the <em>Home</em></h2>
+        <p class="section-p" data-i18n="news.p">Announcements, drives and milestones from our children, caregivers and supporters.</p>
+      </div>
+    </div>
+    <div class="news-grid">
+      <article class="news-card aos">
+        <div class="news-img"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=70&auto=format&fit=crop" alt="Classroom with children" loading="lazy"></div>
+        <div class="news-body">
+          <div class="news-meta"><span class="tag" data-i18n="news.t1">Appeal</span><span class="date" data-i18n="news.d1">Back to school</span></div>
+          <h3 data-i18n="news.n1.h">Back-to-school drive: help us equip every child</h3>
+          <p data-i18n="news.n1.p">Uniforms, shoes, school bags and stationery for the new school year. Sponsor a full set or contribute any amount.</p>
+          <div class="news-foot"><a href="#" data-donate target="_blank" rel="noopener"><span data-i18n="news.n1.a">Support the drive</span> <i class="fa fa-arrow-right"></i></a></div>
+        </div>
+      </article>
+      <article class="news-card aos d1">
+        <div class="news-img"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=70&auto=format&fit=crop" alt="Children studying" loading="lazy"></div>
+        <div class="news-body">
+          <div class="news-meta"><span class="tag" data-i18n="news.t2">Volunteer</span><span class="date" data-i18n="news.d2">Ongoing</span></div>
+          <h3 data-i18n="news.n2.h">Weekend tutors needed for English &amp; Maths</h3>
+          <p data-i18n="news.n2.p">Have two hours on a Saturday? Join our tutoring team and help a child build confidence in the classroom.</p>
+          <div class="news-foot"><a href="#" data-wa="volunteer" target="_blank" rel="noopener"><span data-i18n="news.n2.a">Sign up on WhatsApp</span> <i class="fa fa-arrow-right"></i></a></div>
+        </div>
+      </article>
+      <article class="news-card aos d2">
+        <div class="news-img"><img src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?w=800&q=70&auto=format&fit=crop" alt="A child running in the sunshine" loading="lazy"></div>
+        <div class="news-body">
+          <div class="news-meta"><span class="tag" data-i18n="news.t3">Story</span><span class="date" data-i18n="news.d3">Milestone</span></div>
+          <h3 data-i18n="news.n3.h">Celebrating our school leavers</h3>
+          <p data-i18n="news.n3.p">This year our older children completed their exams, and several are moving on to college and skills training.</p>
+          <div class="news-foot"><a href="#stories"><span data-i18n="news.n3.a">Read more</span> <i class="fa fa-arrow-right"></i></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MINI FAQ -->
+<section class="mini-faq" id="faq">
+  <div class="wrap">
+    <div class="sh">
+      <div class="eyebrow" data-i18n="faq.eyebrow">Common Questions</div>
+      <h2 class="section-h" data-i18n-html="faq.h2">Answers for <em>supporters &amp; families</em>.</h2>
+      <p class="section-p" data-i18n="faq.p">A few things people ask us most often. Can’t find your answer? Message us on WhatsApp.</p>
+    </div>
+    <div class="mfaq-grid">
+      <div class="mfaq-card"><button class="mfaq-q"><span class="mfaq-q-text" data-i18n="faq.q1">How can I sponsor a child?</span><span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span></button>
+        <div class="mfaq-a"><div class="mfaq-a-inner" data-i18n-html="faq.a1">You can give a <strong>monthly pledge</strong> towards a child’s food, schooling and care, or fund a specific need such as school fees. Contact us and we will share the options.</div></div></div>
+      <div class="mfaq-card"><button class="mfaq-q"><span class="mfaq-q-text" data-i18n="faq.q2">How does a child come to live here?</span><span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span></button>
+        <div class="mfaq-a"><div class="mfaq-a-inner" data-i18n-html="faq.a2">Children are usually referred by <strong>welfare officers, schools or families</strong> facing hardship. Each case is assessed carefully to make sure the home is the right, safe place for the child.</div></div></div>
+      <div class="mfaq-card"><button class="mfaq-q"><span class="mfaq-q-text" data-i18n="faq.q3">Do children need to be Buddhist?</span><span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span></button>
+        <div class="mfaq-a"><div class="mfaq-a-inner" data-i18n-html="faq.a3">Not at all. <strong>Children of all races and religions are welcome.</strong> We teach universal values such as kindness, gratitude and respect.</div></div></div>
+      <div class="mfaq-card"><button class="mfaq-q"><span class="mfaq-q-text" data-i18n="faq.q4">Can I visit or volunteer?</span><span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span></button>
+        <div class="mfaq-a"><div class="mfaq-a-inner" data-i18n-html="faq.a4">Yes, by <strong>appointment</strong>. To protect the children, all visits and volunteer activities are arranged in advance with our team.</div></div></div>
+      <div class="mfaq-card"><button class="mfaq-q"><span class="mfaq-q-text" data-i18n="faq.q5">Can I donate items instead of money?</span><span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span></button>
+        <div class="mfaq-a"><div class="mfaq-a-inner" data-i18n-html="faq.a5">Yes. We welcome <strong>school supplies, books, groceries and toiletries</strong>. Please message us first so we can tell you what is most needed right now.</div></div></div>
+      <div class="mfaq-card"><button class="mfaq-q"><span class="mfaq-q-text" data-i18n="faq.q6">Is there tax relief for donations?</span><span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span></button>
+        <div class="mfaq-a"><div class="mfaq-a-inner" data-i18n-html="faq.a6">Yes. The Amitabha Foundation is <strong>registered under LHDN</strong>, so qualifying monetary donations are eligible for tax exemption. Please keep your receipt for tax filing.</div></div></div>
+    </div>
+    <div class="mfaq-foot">
+      <a href="#" data-wa="help" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa fa-circle-question"></i> <span data-i18n="faq.ask">Ask us a question</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION / VOLUNTEER CTA -->
+<div class="cta-band" id="donate">
+  <svg class="hero-arcs" viewBox="0 0 600 600" aria-hidden="true"><g fill="none" stroke="#ffd58a" stroke-width="1"><circle cx="300" cy="300" r="140" opacity=".8"/><circle cx="300" cy="300" r="200" opacity=".55"/><circle cx="300" cy="300" r="260" opacity=".3"/></g></svg>
+  <div class="wrap">
+    <h2 data-i18n-html="cta.h2">In compassion, <em>we change a life</em>.</h2>
+    <p data-i18n="cta.p">Your gift buys school books, warm meals and the steady care that helps a child grow up believing in tomorrow.</p>
+    <div class="cta-btns">
+      <a href="#" data-donate class="btn btn-lg btn-donate" target="_blank" rel="noopener"><img src="assets/img/donation.png" class="donate-img" alt=""> <span data-i18n="cta.donate">Donate now</span></a>
+      <a href="#" data-wa="volunteer" class="btn btn-lg btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span data-i18n="cta.volunteer">Volunteer</span></a>
+      <a href="#" data-wa="sponsor" class="btn btn-lg btn-outline-white" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span data-i18n="cta.sponsor">Sponsor a child</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-brand">
+      <a href="https://amitabhafoundation.my/" target="_blank" rel="noopener"><img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home"></a>
+      <p data-i18n="foot.p">Amitabha Foundation Children Home. A safe, loving home, education support and a hopeful future for children in need in Malaysia.</p>
+      <div class="foot-soc">
+        <a href="https://www.instagram.com/amitabhafoundation" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@amitabhafoundation" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.c1">The Home</h4>
+      <a href="#home" data-i18n="nav.home">Home</a>
+      <a href="#support" data-i18n="nav.care">Our Care</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#stories" data-i18n="nav.stories">Stories</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#" data-donate target="_blank" rel="noopener" data-i18n="nav.donate">Donate</a>
+    </div>
+    <div class="foot-col">
+      <h4><a href="https://amitabhafoundation.my/" target="_blank" rel="noopener" data-i18n="foot.c2">Amitabha Foundation</a></h4>
+      <a href="https://eldercare.amitabhafoundation.my/" target="_blank" rel="noopener" data-i18n="foot.elder">Elder Home</a>
+      <a class="here" href="#home" data-i18n="foot.children">Children Home</a>
+      <a href="https://amitabhafoundation.my/" target="_blank" rel="noopener" data-i18n="foot.dialysis">Dialysis Centre</a>
+      <a href="#" data-wa="volunteer" target="_blank" rel="noopener" data-i18n="cta.volunteer">Volunteer</a>
+    </div>
+    <div class="foot-col">
+      <h4 data-i18n="foot.c3">Contact</h4>
+      <div class="fci"><i class="fa fa-phone"></i><a data-cfg="phone" href="#" style="margin:0">—</a></div>
+      <div class="fci"><i class="fab fa-whatsapp"></i><a data-cfg="hotline" href="#" style="margin:0">—</a></div>
+      <div class="fci"><i class="fa fa-clock"></i><span data-i18n="foot.hours">Visits by appointment · Mon–Fri 9am–5pm</span></div>
+      <div class="fci"><i class="fa fa-location-dot"></i><span data-cfg="address">—</span></div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p data-i18n="foot.copy">© 2026 Amitabha Foundation · Children Home Programme · All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="float-bar">
+  <a class="float-wa" href="#" data-wa="help" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
+  <a class="float-donate" href="#" data-donate target="_blank" rel="noopener" aria-label="Donate"><i class="fa fa-hand-holding-heart"></i> <span class="fl-label" data-i18n="nav.donateNow">Donate Now</span><span class="donate-tip" data-i18n="float.tip">A child is waiting for a kindness only you can give.</span></a>
+</div>
+
+<script>
+/* ── Site contacts: edit here only ───────────────────────────────
+   PLACEHOLDERS — replace with the Children Home's real details.   */
+const CONFIG = {
+  whatsapp: '60XXXXXXXXX',               // international format, digits only
+  phone:    '+603-XXXX XXXX',
+  hotline:  '01X-XXX XXXX',
+  address:  'Children Home address, Kuala Lumpur',
+  donate:   'https://m.amitabhafoundation.my/en/donation'
+};
+const WA_TEXT = {
+  help:      'Hello, I would like to know more about Amitabha Foundation Children Home.',
+  volunteer: 'Hello, I would like to volunteer at Amitabha Foundation Children Home.',
+  sponsor:   'Hello, I would like to sponsor a child at Amitabha Foundation Children Home.'
+};
+document.querySelectorAll('[data-donate]').forEach(a => a.href = CONFIG.donate);
+document.querySelectorAll('[data-wa]').forEach(a => {
+  a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(WA_TEXT[a.dataset.wa] || WA_TEXT.help);
+});
+document.querySelectorAll('[data-cfg]').forEach(el => {
+  const key = el.dataset.cfg;
+  el.textContent = CONFIG[key];
+  if (key === 'phone' || key === 'hotline') el.href = 'tel:' + CONFIG[key].replace(/[^\d+]/g, '');
+});
+
+/* Header scroll + burger */
+const hdr = document.getElementById('hdr');
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mob-menu');
+burger.addEventListener('click', () => { burger.classList.toggle('open'); mob.classList.toggle('open'); });
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); mob.classList.remove('open'); }));
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+/* Active nav link follows the section in view */
+(function(){
+  const links = [...document.querySelectorAll('.nav a')];
+  const ids = links.map(a => a.getAttribute('href').slice(1));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ids.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+})();
+
+/* Hero slideshow */
+(function(){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dotsWrap = document.getElementById('heroDots');
+  let cur = 0, timer = null;
+  function loadSlide(i){ const s = slides[i]; if (s.dataset.bg){ s.style.backgroundImage = `url('${s.dataset.bg}')`; delete s.dataset.bg; } }
+  const dots = [...slides].map((_, i) => {
+    const b = document.createElement('button');
+    b.className = 'hero-dot' + (i === 0 ? ' active' : '');
+    b.setAttribute('aria-label', 'Slide ' + (i + 1));
+    b.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+  function go(i){
+    slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+    cur = (i + slides.length) % slides.length;
+    loadSlide(cur); loadSlide((cur + 1) % slides.length);
+    slides[cur].classList.add('active'); dots[cur].classList.add('active');
+  }
+  function restart(){ clearInterval(timer); timer = setInterval(() => go(cur + 1), 5000); }
+  loadSlide(1); restart();
+  document.addEventListener('visibilitychange', () => { if (document.hidden) clearInterval(timer); else restart(); });
+})();
+
+/* Hero cards open as a glass modal (same behaviour as Elder Home) */
+(function(){
+  const modal = document.createElement('div');
+  modal.className = 'hi-modal';
+  document.body.appendChild(modal);
+  function close(){ modal.classList.remove('on'); setTimeout(() => { if (!modal.classList.contains('on')) modal.innerHTML = ''; }, 400); }
+  document.querySelectorAll('.hero-items .hi-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const clone = card.cloneNode(true);
+      clone.querySelectorAll('.hi-link').forEach(l => l.addEventListener('click', e => { e.stopPropagation(); close(); }));
+      modal.innerHTML = '';
+      modal.appendChild(clone);
+      requestAnimationFrame(() => modal.classList.add('on'));
+    });
+  });
+  modal.addEventListener('click', close);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();
+
+/* Scroll reveal */
+const aosObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    el.classList.add('in');
+    aosObs.unobserve(el);
+    /* once revealed, hand the element back to its own hover/transition styles */
+    setTimeout(() => el.classList.remove('aos','aos-l','aos-r','in','d1','d2','d3','d4'), 1300);
+  });
+}, { threshold: .12 });
+document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el));
+
+/* Gallery slider */
+(function(){
+  const track = document.getElementById('galTrack');
+  const total = track.children.length;
+  const dotsWrap = document.getElementById('galDots');
+  const thumbs = document.querySelectorAll('#galThumbs .gal-thumb');
+  const wrap = document.getElementById('gal');
+  let cur = 0, timer = null;
+  for (let i = 0; i < total; i++){
+    const b = document.createElement('button');
+    b.className = 'gal-dot' + (i === 0 ? ' on' : '');
+    b.setAttribute('aria-label', 'Slide ' + (i + 1));
+    b.addEventListener('click', () => go(i, true));
+    dotsWrap.appendChild(b);
+  }
+  const dots = dotsWrap.children;
+  function go(i, manual){
+    cur = (i + total) % total;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    [...dots].forEach((d, k) => d.classList.toggle('on', k === cur));
+    thumbs.forEach((t, k) => t.classList.toggle('on', k === cur));
+    if (manual) restart();
+  }
+  function restart(){ clearInterval(timer); timer = setInterval(() => go(cur + 1), 6000); }
+  document.getElementById('galPrev').addEventListener('click', () => go(cur - 1, true));
+  document.getElementById('galNext').addEventListener('click', () => go(cur + 1, true));
+  thumbs.forEach((t, i) => t.addEventListener('click', () => go(i, true)));
+  wrap.addEventListener('mouseenter', () => clearInterval(timer));
+  wrap.addEventListener('mouseleave', restart);
+  let sx = 0;
+  wrap.addEventListener('touchstart', e => { sx = e.changedTouches[0].screenX; }, { passive: true });
+  wrap.addEventListener('touchend', e => { const dx = e.changedTouches[0].screenX - sx; if (Math.abs(dx) > 40) go(cur + (dx < 0 ? 1 : -1), true); }, { passive: true });
+  restart();
+})();
+
+/* Mini FAQ accordion */
+document.querySelectorAll('.mfaq-card').forEach(card => {
+  card.querySelector('.mfaq-q').addEventListener('click', () => {
+    const open = card.classList.contains('open');
+    document.querySelectorAll('.mfaq-card.open').forEach(c => { c.classList.remove('open'); c.querySelector('.mfaq-a').style.maxHeight = '0'; });
+    if (!open){ card.classList.add('open'); const a = card.querySelector('.mfaq-a'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+/* ── English / 中文 switch (same mechanism as Elder Home lang.js) ── */
+(function(){
+  const ZH = {
+    'meta.title': '阿弥陀佛儿童之家：成长的安心之所',
+    'nav.home': '首页', 'nav.care': '我们的照护', 'nav.about': '关于我们', 'nav.stories': '故事',
+    'nav.news': '新闻', 'nav.faq': '常见问题', 'nav.seekHelp': '寻求帮助', 'nav.donate': '捐款', 'nav.donateNow': '立即捐款',
+
+    'hero.eyebrow': '阿弥陀佛援助总会 · 儿童之家',
+    'hero.h1': '安心成长的家，<br><em>值得相信的未来</em>。',
+    'hero.sub': '阿弥陀佛儿童之家为有需要的孩子提供温暖的家、稳定的学业支持与日常照顾，陪伴他们成长为自信、善良、充满希望的人。',
+    'hero.c1.title': '了解我们的照护', 'hero.c1.body': '安全的家、学业支持、医疗保健与心灵陪伴——孩子安心成长所需的一切。', 'hero.c1.link': '了解照护内容',
+    'hero.c2.title': '联系我们', 'hero.c2.body': '认识需要安全居所的孩子，或想助养、当义工、来访？欢迎通过 WhatsApp 与我们联系。', 'hero.c2.link': 'WhatsApp 咨询',
+    'hero.c3.title': '教育为先', 'hero.c3.body': '每个孩子都上学。我们负担学费、校服与书本，并在晚间安排功课辅导与补习。',
+    'hero.c4.title': '营养膳食', 'hero.c4.body': '每天提供均衡的家常饭菜，照顾成长中的身体，大家同桌共餐。',
+    'hero.c5.title': '生命价值', 'hero.c5.body': '善良、感恩与正念融入日常生活，同时学习生活技能，为长大成人做好准备。',
+
+    'sup.eyebrow': '我们如何照护', 'sup.h2': '孩子<em>健康成长</em>所需的一切',
+    'sup.p': '我们给予的不只是一个屋檐和一张床，而是全方位照顾每个孩子——从今天的功课到明天的梦想。',
+    'sup.more': '了解更多',
+    'sup.s1.h3': '安全温暖的家', 'sup.s1.p': '熟悉每个孩子的照顾者全天候陪伴，提供温暖的床铺、干净的衣物和规律的作息。',
+    'sup.s2.h3': '教育支持', 'sup.s2.p': '学费、校服、书本与交通，加上每日功课时间与补习，不让任何孩子落后。',
+    'sup.s3.h3': '健康与营养', 'sup.s3.p': '每日营养膳食、定期健康检查、牙科护理，并在需要时及时就医。',
+    'sup.s4.h3': '心理健康', 'sup.s4.p': '辅导、导师陪伴与耐心倾听，帮助孩子疗愈、建立信任，真正感到像家一样。',
+    'sup.s5.h3': '品格与生活技能', 'sup.s5.p': '品格培养、正念练习，以及烹饪、理财等实用技能，为独立生活做好准备。',
+
+    'stat.yrs': '年', 'stat.years': '用心照护', 'stat.children': '受照顾的孩子', 'stat.school': '入学率', 'stat.meals': '每年供餐',
+
+    'about.card.n': '每个孩子，每一天', 'about.card.l': '如家人般被照顾',
+    'about.eyebrow': '关于我们', 'about.h2': '让孩子<em>被看见、被保护、被爱</em>的家。',
+    'about.p': '阿弥陀佛儿童之家是阿弥陀佛援助总会关怀大家庭的一员。我们收容因贫困、失去亲人或家庭困境而无法安全在家生活的孩子，并一路陪伴，直到他们能够自立。',
+    'about.v1.t': '安全永远第一', 'about.v1.p': '明确的儿童保护措施、受过训练的照顾者，以及平静安全的居住环境。',
+    'about.v2.t': '是家庭，不是机构', 'about.v2.p': '一起吃饭、一起过生日和节日，就像每一个家庭一样。',
+    'about.v3.t': '透明捐献', 'about.v3.p': '每一笔捐款均可扣税，并可追溯其所资助的照护。',
+    'about.cta': '阅读他们的故事',
+
+    'gal.eyebrow': '院内生活', 'gal.h2': '平凡日子里的<em>小小成就</em>',
+    'gal.p': '长桌上的功课时间、庭院里的游戏、睡前安静的阅读——这些日常片段，让这里成为家。',
+    'gal.s1.e': '功课时间', 'gal.s1.h': '一起学习', 'gal.s1.p': '每天晚上，义工与照顾者陪孩子们一题一题完成功课。',
+    'gal.s2.e': '共同学习', 'gal.s2.h': '大孩子帮小孩子', 'gal.s2.p': '哥哥姐姐帮忙弟弟妹妹阅读与算术，在过程中学会耐心与责任。',
+    'gal.s3.e': '户外与游戏', 'gal.s3.h': '尽情奔跑欢笑', 'gal.s3.p': '运动、出游与自由玩耍和上课一样重要。童年就该像童年。',
+    'gal.s4.e': '上学日', 'gal.s4.h': '每天早上准备好上学', 'gal.s4.p': '校服熨好、书包收好、早餐吃饱：规律的作息让每个孩子自信地开始新的一天。',
+    'gal.s5.e': '一家人', 'gal.s5.h': '一起长大', 'gal.s5.p': '节日、生日与日常的善意，让一群孩子成为兄弟姐妹。',
+
+    'st.eyebrow': '故事与活动', 'st.h2': '小小步伐，<em>巨大改变</em>',
+    'st.p': '来自孩子、照顾者与义工的故事。为保护孩子隐私，姓名均已更改。',
+    'st.c1.cat': '教育', 'st.c1.q': '我以前很怕数学。现在晚饭后，我会帮弟弟妹妹做算术。', 'st.c1.n': '“伟”，12 岁', 'st.c1.m': '在这里生活了 4 年',
+    'st.c2.cat': '义工', 'st.c2.q': '我原本每周六来教英文。两年过去，孩子们教会我的坚韧远比我教他们的多。', 'st.c2.n': '美玲', 'st.c2.m': '周末补习义工',
+    'st.c3.cat': '活动', 'st.c3.q': '美术时间让比较安静的孩子有了表达的方式。他们最动人的故事，往往先用色彩说出来。', 'st.c3.n': '照顾者团队', 'st.c3.m': '儿童之家职员',
+
+    'news.eyebrow': '新闻与动态', 'news.h2': '来自<em>儿童之家</em>的最新消息', 'news.p': '来自孩子、照顾者与支持者的公告、募集活动与里程碑。',
+    'news.t1': '募集', 'news.d1': '开学季', 'news.n1.h': '开学用品募集：帮助每个孩子做好准备', 'news.n1.p': '新学年的校服、鞋子、书包与文具。可认捐一整套，或任意金额支持。', 'news.n1.a': '支持此活动',
+    'news.t2': '义工', 'news.d2': '长期招募', 'news.n2.h': '招募英文与数学周末补习义工', 'news.n2.p': '周六有两个小时吗？加入我们的补习团队，帮助孩子在课堂上建立自信。', 'news.n2.a': 'WhatsApp 报名',
+    'news.t3': '故事', 'news.d3': '里程碑', 'news.n3.h': '祝贺我们的毕业生', 'news.n3.p': '今年，几位较年长的孩子完成了考试，并将升读学院或参加技能培训。', 'news.n3.a': '阅读更多',
+
+    'faq.eyebrow': '常见问题', 'faq.h2': '给<em>支持者与家庭</em>的解答', 'faq.p': '以下是大家最常问的问题。找不到答案？欢迎通过 WhatsApp 联系我们。',
+    'faq.q1': '如何助养一个孩子？', 'faq.a1': '您可以<strong>每月认捐</strong>支持孩子的膳食、学业与照护，或资助特定需要，例如学费。欢迎联系我们了解详情。',
+    'faq.q2': '孩子是如何入住的？', 'faq.a2': '孩子通常由<strong>社会福利官员、学校或陷入困境的家庭</strong>转介。每个个案都会经过审慎评估，确保这里是孩子合适且安全的去处。',
+    'faq.q3': '孩子必须是佛教徒吗？', 'faq.a3': '完全不需要。<strong>我们欢迎所有种族与宗教背景的孩子。</strong>我们教导善良、感恩与尊重等普世价值。',
+    'faq.q4': '我可以来访或当义工吗？', 'faq.a4': '可以，但需<strong>预约</strong>。为保护孩子，所有探访与义工活动都须事先与我们安排。',
+    'faq.q5': '可以捐赠物品代替金钱吗？', 'faq.a5': '可以。我们欢迎<strong>文具、书籍、食品杂货与日用品</strong>。请先联系我们，以便告知目前最需要的物品。',
+    'faq.q6': '捐款可以扣税吗？', 'faq.a6': '可以。阿弥陀佛援助总会已<strong>在内陆税收局（LHDN）注册</strong>，符合条件的现金捐款可获税务豁免。请保留收据以便报税。',
+    'faq.ask': '向我们提问',
+
+    'cta.h2': '以慈悲之心，<em>改变一个生命</em>。', 'cta.p': '您的捐助将化为课本、温热的饭菜与稳定的照顾，帮助孩子长大后依然相信明天。',
+    'cta.donate': '立即捐款', 'cta.volunteer': '当义工', 'cta.sponsor': '助养孩子',
+
+    'foot.p': '阿弥陀佛儿童之家。为马来西亚有需要的孩子提供安全温暖的家、学业支持与充满希望的未来。',
+    'foot.c1': '儿童之家', 'foot.c2': '阿弥陀佛援助总会', 'foot.elder': '敬老院', 'foot.children': '儿童之家', 'foot.dialysis': '洗肾中心',
+    'foot.c3': '联系我们', 'foot.hours': '探访需预约 · 周一至周五 上午9时至下午5时',
+    'foot.copy': '© 2026 阿弥陀佛援助总会 · 儿童之家计划 · 版权所有。',
+    'float.tip': '有个孩子，正等待着只有您能给予的善意。'
+  };
+  const origTitle = document.title;
+  function store(k, v){ try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch(e) { return null; } }
+  function apply(lang){
+    document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => {
+      const key = el.dataset.i18n || el.dataset.i18nHtml;
+      if (lang === 'zh' && ZH[key] !== undefined){
+        if (el.dataset.i18nOrig === undefined) el.dataset.i18nOrig = el.innerHTML;
+        if (el.dataset.i18nHtml) el.innerHTML = ZH[key]; else el.textContent = ZH[key];
+      } else if (el.dataset.i18nOrig !== undefined){
+        el.innerHTML = el.dataset.i18nOrig;
+      }
+    });
+    document.title = lang === 'zh' ? ZH['meta.title'] : origTitle;
+    document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
+    document.querySelectorAll('.lang-toggle').forEach(b => b.textContent = lang === 'zh' ? 'EN' : '中文');
+    document.querySelectorAll('.mfaq-card.open .mfaq-a').forEach(a => a.style.maxHeight = a.scrollHeight + 'px');
+    store('site_lang', lang);
+  }
+  if (store('site_lang') === 'zh') apply('zh');
+  document.querySelectorAll('.lang-toggle').forEach(b => b.addEventListener('click', () => apply(store('site_lang') === 'zh' ? 'en' : 'zh')));
+})();
+</script>
+</body>
+</html>
