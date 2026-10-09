@@ -74,9 +74,14 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.93);backdr
 header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 18px rgba(10,40,45,.06)}
 .hdr{max-width:var(--max);margin:auto;padding:0 1.5rem;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:1.2rem}
 .brand{display:flex;align-items:center;gap:.7rem}
-.brand img{height:54px;width:auto;display:block;object-fit:contain}
+.brand img{height:54px;width:auto;max-width:none;display:block;object-fit:contain}
+/* "Children Home" name beside the logo, so the header always says which home this is */
+.brand,.nav,.hdr-r{flex-shrink:0}
+.brand-tag{font-family:var(--display);font-weight:600;font-size:1.15rem;line-height:1.05;letter-spacing:-.01em;color:var(--leaf-800);padding:.15rem 0 .15rem .8rem;border-left:2px solid var(--sun);white-space:nowrap}
+#hdr.bt-compact .brand-tag{font-size:.92rem;white-space:normal;max-width:5.4em}
+#hdr.bt-hide .brand-tag{display:none}
 .nav{display:flex;gap:.1rem;align-items:center}
-.nav a{font-size:.86rem;font-weight:500;color:var(--ink-700);padding:.5rem .85rem;border-radius:8px;transition:color .3s ease,background .3s ease}
+.nav a{font-size:.86rem;font-weight:500;color:var(--ink-700);padding:.5rem .85rem;border-radius:8px;white-space:nowrap;transition:color .3s ease,background .3s ease}
 .nav a:hover{background:rgba(247,230,233,.5);color:var(--brand-red-nav)}
 .nav a.on{color:var(--brand-red-nav)}
 .nav a.on::after{content:"";display:block;width:18px;height:2px;border-radius:2px;background:var(--brand-red-nav);margin:2px auto -6px}
@@ -116,11 +121,17 @@ header.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 18px rgba(10,4
 .hero-arcs{position:absolute;right:-140px;bottom:-220px;width:620px;height:620px;z-index:-3;pointer-events:none;opacity:.5}
 .hero-in{max-width:var(--max);margin:auto;width:100%;padding:clamp(1.8rem,6vw,4.5rem) clamp(.7rem,3.5vw,1.5rem) clamp(2.5rem,8vw,6rem);display:flex;flex-direction:column}
 .hero-in>*{max-width:640px}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:1.6rem;text-shadow:0 1px 6px rgba(0,0,0,.45);animation:rise .7s .15s backwards}
+.hero-in>.hero-title{max-width:940px}
+.hero-eyebrow{display:flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.8rem;font-weight:700;line-height:1.4;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.88);margin-bottom:1rem;text-shadow:0 1px 6px rgba(0,0,0,.45);animation:rise .7s .15s backwards}
 .hero-eyebrow::before{content:"";width:22px;height:2px;background:var(--sun);border-radius:2px;flex-shrink:0}
-.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.12;letter-spacing:-.02em;color:#fff;margin-bottom:1.4rem;text-wrap:balance;text-shadow:0 1px 0 rgba(0,0,0,.45),0 6px 24px rgba(0,0,0,.25);animation:rise .9s .25s backwards}
-.hero h1 em{font-style:italic;font-weight:500;color:var(--sun-l)}
-.hero-sub{font-size:clamp(.92rem,2.5vw,1.05rem);color:rgba(255,255,255,.88);max-width:560px;line-height:1.7;margin-bottom:2.2rem;text-shadow:0 1px 4px rgba(0,0,0,.35);animation:rise .8s .4s backwards}
+/* Hero headline = the name of the home: "Children Home" is the largest text on the page,
+   the other-language name sits beside it, and "A safe place to grow…" becomes the tagline */
+.hero-title{font-family:var(--display);font-weight:600;color:#fff;margin-bottom:1.1rem;line-height:1}
+.hero-name{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.6rem;row-gap:.35rem;animation:rise .9s .25s backwards}
+.hero-name-main{font-size:clamp(2.9rem,9vw,6.2rem);line-height:.98;letter-spacing:-.025em;text-wrap:balance;text-shadow:0 2px 0 rgba(0,0,0,.3),0 8px 30px rgba(0,0,0,.3)}
+.hero-name-alt{font-family:var(--sans);font-size:clamp(1.3rem,3.4vw,2.3rem);font-weight:700;line-height:1.2;letter-spacing:.06em;color:var(--sun-l);text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.hero-tagline{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.8vw,1.7rem);line-height:1.3;color:#fff;margin-bottom:1rem;text-wrap:balance;text-shadow:0 1px 10px rgba(0,0,0,.4);animation:rise .8s .35s backwards}
+.hero-sub{font-size:clamp(.92rem,2.5vw,1.05rem);color:rgba(255,255,255,.88);max-width:560px;line-height:1.7;margin-bottom:2rem;text-shadow:0 1px 4px rgba(0,0,0,.35);animation:rise .8s .45s backwards}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 .hero-items{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.4rem;max-width:720px!important}
 .hi-card{background:rgba(255,255,255,.1);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:.85rem 1.05rem;color:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;text-align:left;transition:background .2s,border-color .2s,transform .18s;animation:rise .7s backwards}
@@ -459,6 +470,61 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
 .lb-x{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background var(--t)}
 .lb-x:hover{background:var(--brand-red)}
 
+/* ═══ Animated scene: a day at the Children Home (bottom of "Our programmes") ═══ */
+/* animated scene: a day at the Children Home.
+   Each piece of scenery keeps its own size (never stretched or cropped); a small script hides
+   the least important pieces on narrower screens and shrinks the rest only on phones.
+   The caregiver and children walk across the full width of the screen, left to right. */
+#support{padding-bottom:0}
+.scene{position:relative;height:calc(96px + 212px * var(--k,1));margin-top:clamp(2.2rem,5vw,3.6rem);overflow:hidden}
+.sc-hills{position:absolute;left:0;bottom:40px;width:100%;height:130px}
+.sc-path{position:absolute;left:0;right:0;bottom:22px;height:32px;border-top:2px solid #e0d6bf;background:#ece5d3 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='32'%3E%3Cellipse cx='20' cy='16' rx='14' ry='5' fill='%23e2d8c1'/%3E%3Cellipse cx='80' cy='18' rx='11' ry='4' fill='%23e2d8c1'/%3E%3C/svg%3E") repeat-x 0 50%}
+.sc-grass{position:absolute;left:0;right:0;bottom:0;height:22px;background:#cfe6dc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='22'%3E%3Cpath d='M20 19q3-9 6 0q3-9 6 0M128 20q3-9 6 0q3-9 6 0' fill='none' stroke='%236bb5a1' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='76' cy='12' r='3' fill='%23ee9fb0'/%3E%3Ccircle cx='88' cy='16' r='2.5' fill='%23f2a93b'/%3E%3C/svg%3E") repeat-x 0 100%}
+.sc-props{position:absolute;bottom:54px;left:calc(50% - 50% / var(--k,1));width:calc(100% / var(--k,1));display:flex;justify-content:space-around;align-items:flex-end;padding:0 28px;transform:scale(var(--k,1));transform-origin:50% 100%}
+.sc-props>svg{flex:none;display:block;overflow:visible}
+.sc-sunbox{position:absolute;top:10px;right:5%;width:78px;height:78px}
+@media(max-width:640px){.sc-sunbox{left:4%;right:auto;top:6px;width:56px;height:56px}}
+.sc-rays{transform-box:fill-box;transform-origin:center;animation:scSpin 30s linear infinite}
+.sc-track{position:absolute;left:0;top:0;width:100%;height:100%}
+.sc-track>svg{position:absolute;left:0;overflow:visible}
+.sc-drift{animation:scAcross var(--d,140s) linear var(--delay,0s) infinite}
+@keyframes scAcross{from{transform:translateX(-240px)}to{transform:translateX(calc(100% + 40px))}}
+.sc-walktrack{animation:scAcross var(--walk,32s) linear calc(var(--walk,32s) * -.18) infinite}
+.sc-walkers{bottom:26px;width:calc(150px * var(--kw,1));height:calc(100px * var(--kw,1))}
+.sc-wing{transform-box:fill-box;transform-origin:50% 100%;animation:scFlap .42s ease-in-out infinite alternate}
+@keyframes scFlap{to{transform:scaleY(-.45)}}
+.sc-sway{transform-box:fill-box;transform-origin:50% 100%;animation:scSway 4.4s ease-in-out infinite alternate}
+@keyframes scSway{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
+.sc-wave{transform-box:fill-box;transform-origin:0 100%;animation:scWave .8s ease-in-out infinite alternate}
+@keyframes scWave{from{transform:rotate(-24deg)}to{transform:rotate(14deg)}}
+.sc-tail{transform-box:fill-box;transform-origin:0 100%;animation:scTail 1.6s ease-in-out infinite alternate}
+@keyframes scTail{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+.sc-cloth{transform-box:fill-box;transform-origin:50% 0;animation:scCloth 2.3s ease-in-out infinite alternate}
+@keyframes scCloth{from{transform:rotate(-6deg)}to{transform:rotate(7deg)}}
+.sc-swing{transform-box:view-box;transform-origin:70px 24px;animation:scSwing 1.5s ease-in-out infinite alternate}
+@keyframes scSwing{from{transform:rotate(-20deg)}to{transform:rotate(20deg)}}
+.sc-seesaw{transform-box:view-box;transform-origin:90px 88px;animation:scSeesaw 1.9s ease-in-out infinite alternate}
+@keyframes scSeesaw{from{transform:rotate(-11deg)}to{transform:rotate(11deg)}}
+.sc-kite{transform-box:view-box;transform-origin:38px 144px;animation:scKite 5s ease-in-out infinite alternate}
+@keyframes scKite{from{transform:rotate(-5deg)}to{transform:rotate(6deg)}}
+.sc-kiteb{transform-box:view-box;transform-origin:90px 62px;animation:scKiteB 1.7s ease-in-out infinite alternate}
+@keyframes scKiteB{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.sc-bub{transform-box:fill-box;transform-origin:center;opacity:0;animation:scBub 3.2s ease-out infinite}
+@keyframes scBub{0%{transform:translate(0,0) scale(.3);opacity:0}12%{opacity:.95}100%{transform:translate(var(--bx,16px),-104px) scale(1.25);opacity:0}}
+.sc-drop{opacity:0;animation:scDrop .9s linear infinite}
+@keyframes scDrop{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(5px,15px);opacity:0}}
+@keyframes scSpin{to{transform:rotate(360deg)}}
+/* the walkers: caregiver holding hands with two children */
+.wk-bob{animation:wkBob .3s ease-in-out infinite alternate}
+@keyframes wkBob{to{transform:translateY(-2px)}}
+.wk-leg{transform-box:fill-box;transform-origin:50% 0;animation:wkLeg .6s ease-in-out infinite alternate}
+.wk-leg.b{animation-direction:alternate-reverse}
+@keyframes wkLeg{from{transform:rotate(-20deg)}to{transform:rotate(20deg)}}
+.wk-arm{transform-box:fill-box;transform-origin:0 0;animation:wkLeg .6s ease-in-out infinite alternate-reverse}
+/* pause while off screen (saves battery on phones) */
+.scene.sc-paused,.scene.sc-paused *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.scene,.scene *{animation:none!important}}
+
 /* Scroll reveal (content stays visible if JavaScript is off) */
 .js .aos{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
 .js .aos-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
@@ -494,6 +560,8 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
 }
 @media(max-width:640px){
   .brand img{height:44px}
+  .brand{gap:.55rem}
+  .brand-tag{padding-left:.6rem}
   .stat{border-right:none}
   .news-grid{grid-template-columns:1fr}
   .foot-top{grid-template-columns:1fr}
@@ -520,6 +588,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
   .ss.rev .ss-badge{left:0}
 }
 @media(max-width:480px){
+  .hero-eyebrow{font-size:.72rem;letter-spacing:.12em}
   .cta-btns>*,.ss-cta .btn{width:100%;justify-content:center}
   .stats-in{grid-template-columns:1fr 1fr}
   .stat{flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 1rem}
@@ -570,6 +639,7 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
   <div class="hdr">
     <a href="#home" class="brand">
       <img src="assets/af-ch-logo.png" alt="Amitabha Foundation Children Home">
+      <span class="brand-tag" aria-hidden="true" data-i18n="brand.tag">Children Home</span>
     </a>
     <nav class="nav">
       <a href="#home" class="on" data-i18n="nav.home">Home</a>
@@ -612,8 +682,14 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
   <svg class="hero-arcs" viewBox="0 0 600 600" aria-hidden="true"><g fill="none" stroke="#ffd58a" stroke-width="1.2"><circle cx="300" cy="300" r="120" opacity=".9"/><circle cx="300" cy="300" r="170" opacity=".7"/><circle cx="300" cy="300" r="220" opacity=".5"/><circle cx="300" cy="300" r="270" opacity=".3"/></g><circle cx="300" cy="300" r="70" fill="#f2a93b" opacity=".35"/></svg>
 
   <div class="hero-in">
-    <div class="hero-eyebrow" data-i18n="hero.eyebrow">Est. 2010 · Johor Bahru</div>
-    <h1 data-i18n-html="hero.h1">A safe place to grow,<br><em>a future to believe in</em>.</h1>
+    <h1 class="hero-title">
+      <span class="hero-eyebrow" data-i18n="hero.eyebrow">Amitabha Foundation · Johor Bahru</span>
+      <span class="hero-name">
+        <span class="hero-name-main" data-i18n="hero.name">Children Home</span>
+        <span class="hero-name-alt" lang="zh" data-i18n="hero.altname">儿童小屋</span>
+      </span>
+    </h1>
+    <p class="hero-tagline" data-i18n="hero.tagline">A safe place to grow, a future to believe in.</p>
     <p class="hero-sub" data-i18n="hero.sub">Since 2010, Amitabha Foundation Children Home has given orphaned and underprivileged children a safe, loving home, a full education and the care they need to build a brighter future.</p>
     <div class="hero-items">
       <button class="hi-card">
@@ -699,6 +775,221 @@ footer{background:var(--navy-900);color:rgba(255,255,255,.5)}
           <p class="prog-quote" data-i18n="prog.p3.q">“With love and guidance, every child can thrive.”</p>
         </div>
       </article>
+    </div>
+  </div>
+
+  <div class="scene" aria-hidden="true">
+    <svg class="sc-sunbox" viewBox="0 0 90 90">
+      <g class="sc-rays"><path d="M45 4v11M45 75v11M4 45h11M75 45h11M16 16l8 8M66 66l8 8M74 16l-8 8M24 66l-8 8" stroke="#f2a93b" stroke-width="4" stroke-linecap="round"/></g>
+      <circle cx="45" cy="45" r="21" fill="#ffd58a"/>
+      <circle cx="38" cy="42" r="2" fill="#8b6b4f"/><circle cx="52" cy="42" r="2" fill="#8b6b4f"/>
+      <path d="M37 50q8 7 16 0" stroke="#8b6b4f" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="32" cy="49" r="3" fill="#f6b8a0" opacity=".7"/><circle cx="58" cy="49" r="3" fill="#f6b8a0" opacity=".7"/>
+    </svg>
+    <div class="sc-track sc-drift" style="--d:130s;--delay:-30s"><svg style="top:14px;width:120px;height:72px" viewBox="0 0 106 64"><path d="M25 60a20 20 0 0 1 4-39a26 26 0 0 1 49 6a17 17 0 0 1 2 33Z" fill="#fff" stroke="#e3ecee" stroke-width="2"/></svg></div>
+    <div class="sc-track sc-drift" style="--d:170s;--delay:-110s"><svg style="top:56px;width:84px;height:50px" viewBox="0 0 106 64"><path d="M25 60a20 20 0 0 1 4-39a26 26 0 0 1 49 6a17 17 0 0 1 2 33Z" fill="#fff" stroke="#e3ecee" stroke-width="2"/></svg></div>
+    <div class="sc-track sc-drift" style="--d:150s;--delay:-75s"><svg style="top:28px;width:100px;height:60px" viewBox="0 0 106 64"><path d="M25 60a20 20 0 0 1 4-39a26 26 0 0 1 49 6a17 17 0 0 1 2 33Z" fill="#fff" stroke="#e3ecee" stroke-width="2"/></svg></div>
+    <div class="sc-track sc-drift" style="--d:44s;--delay:-12s"><svg style="top:74px;width:60px;height:30px" viewBox="0 0 60 30"><path class="sc-wing" d="M2 14q6-7 12 0q6-7 12 0" fill="none" stroke="#4d6065" stroke-width="2" stroke-linecap="round"/><path class="sc-wing" style="animation-delay:-.2s" d="M32 24q5-6 10 0q5-6 10 0" fill="none" stroke="#4d6065" stroke-width="2" stroke-linecap="round"/></svg></div>
+    <svg class="sc-hills" viewBox="0 0 1440 130" preserveAspectRatio="none"><path d="M0 80C200 36 380 46 560 70C760 34 940 40 1120 66C1260 46 1360 50 1440 62V130H0Z" fill="#dcefe7"/></svg>
+    <div class="sc-path"></div>
+    <div class="sc-grass"></div>
+
+    <!-- scenery: data-pri 1 always shows; higher numbers hide first on narrower screens -->
+    <div class="sc-props">
+      <!-- bush -->
+      <svg data-pri="6" width="80" height="50" viewBox="0 0 80 50"><ellipse cx="24" cy="36" rx="22" ry="14" fill="#6bb5a1"/><ellipse cx="52" cy="34" rx="24" ry="16" fill="#3b9480"/><ellipse cx="40" cy="26" rx="16" ry="12" fill="#6bb5a1"/><g fill="#ee9fb0"><circle cx="20" cy="30" r="3"/><circle cx="46" cy="22" r="3"/><circle cx="60" cy="32" r="3"/></g><g fill="#ffd58a"><circle cx="32" cy="38" r="2.5"/><circle cx="66" cy="26" r="2.5"/></g></svg>
+
+      <!-- the Children Home: a child waves from the window, another blows bubbles on the lawn -->
+      <svg data-pri="1" width="310" height="200" viewBox="0 0 310 200">
+        <ellipse cx="20" cy="190" rx="20" ry="11" fill="#6bb5a1"/>
+        <rect x="30" y="82" width="220" height="118" fill="#fff" stroke="#e6dcc6" stroke-width="2"/>
+        <path d="M14 86L140 22L266 86Z" fill="#2e7d6b"/>
+        <path d="M14 86L140 22L266 86" fill="none" stroke="#22604f" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="140" cy="60" r="14" fill="#ffd58a"/>
+        <path d="M140 67c-6-4-10-7-10-11a5 5 0 0 1 10-1a5 5 0 0 1 10 1c0 4-4 7-10 11Z" fill="#ab1a1f"/>
+        <rect x="50" y="96" width="38" height="30" rx="3" fill="#ffd58a"/><rect x="121" y="96" width="38" height="30" rx="3" fill="#ffd58a"/><rect x="192" y="96" width="38" height="30" rx="3" fill="#ffd58a"/>
+        <path d="M69 96v30M50 111h38M211 96v30M192 111h38" stroke="#fff" stroke-width="2"/>
+        <rect x="133" y="117" width="14" height="9" rx="4" fill="#ee9fb0"/>
+        <circle cx="140" cy="110" r="7" fill="#f1c9a5"/><path d="M133 109a7 7 0 0 1 14-1c-4-2-9-2-14 1Z" fill="#1f3034"/><circle cx="134" cy="106" r="2.6" fill="#1f3034"/><circle cx="146" cy="106" r="2.6" fill="#1f3034"/>
+        <circle cx="137.5" cy="110" r="1" fill="#1f3034"/><circle cx="142.5" cy="110" r="1" fill="#1f3034"/>
+        <path class="sc-wave" d="M146 121L153 108" stroke="#f1c9a5" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M47 128h44M118 128h44M189 128h44" stroke="#e6dcc6" stroke-width="3" stroke-linecap="round"/>
+        <rect x="50" y="146" width="38" height="30" rx="3" fill="#ffd58a"/><rect x="192" y="146" width="38" height="30" rx="3" fill="#ffd58a"/>
+        <path d="M69 146v30M50 161h38M211 146v30M192 161h38" stroke="#fff" stroke-width="2"/>
+        <rect x="47" y="176" width="44" height="7" rx="2" fill="#8b6b4f"/><rect x="189" y="176" width="44" height="7" rx="2" fill="#8b6b4f"/>
+        <g fill="#ee9fb0"><circle cx="54" cy="175" r="3"/><circle cx="70" cy="174" r="3"/><circle cx="84" cy="175" r="3"/><circle cx="196" cy="175" r="3"/><circle cx="212" cy="174" r="3"/><circle cx="226" cy="175" r="3"/></g>
+        <g fill="#f2a93b"><circle cx="62" cy="173" r="2.5"/><circle cx="77" cy="174" r="2.5"/><circle cx="204" cy="173" r="2.5"/><circle cx="219" cy="174" r="2.5"/></g>
+        <path d="M112 140h56l-6-8h-44Z" fill="#f2a93b"/>
+        <path d="M121 200V160a19 19 0 0 1 38 0V200Z" fill="#22604f"/><circle cx="152" cy="180" r="2.2" fill="#ffd58a"/>
+        <rect x="114" y="196" width="52" height="4" rx="2" fill="#e6dcc6"/>
+        <path d="M272 196h16" stroke="#2c3e50" stroke-width="5" stroke-linecap="round"/>
+        <rect x="266" y="172" width="14" height="22" rx="6" fill="#f2a93b"/>
+        <circle cx="273" cy="164" r="8" fill="#e8b48f"/><path d="M265 163a8 8 0 0 1 16-1c-5-3-11-3-16 1Z" fill="#3a2a20"/><circle cx="277" cy="164" r="1.2" fill="#1f3034"/>
+        <path d="M276 178L286 168" stroke="#e8b48f" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M286 168L289 161" stroke="#9aa9ae" stroke-width="1.5"/><circle cx="290.5" cy="157.5" r="3.5" fill="none" stroke="#9aa9ae" stroke-width="1.5"/>
+        <g fill="#fff" fill-opacity=".55" stroke="#6bb5a1" stroke-width="1.4">
+          <circle class="sc-bub" cx="293" cy="152" r="5"/>
+          <circle class="sc-bub" style="animation-delay:-.8s;--bx:-4px" cx="293" cy="152" r="3.5"/>
+          <circle class="sc-bub" style="animation-delay:-1.6s;--bx:22px" cx="293" cy="152" r="6"/>
+          <circle class="sc-bub" style="animation-delay:-2.4s;--bx:8px" cx="293" cy="152" r="4"/>
+        </g>
+      </svg>
+
+      <!-- tree -->
+      <svg data-pri="4" width="100" height="170" viewBox="0 0 100 170"><g class="sc-sway"><rect x="45" y="96" width="10" height="74" rx="4" fill="#8b6b4f"/><circle cx="50" cy="62" r="36" fill="#6bb5a1"/><circle cx="26" cy="84" r="22" fill="#3b9480"/><circle cx="74" cy="82" r="24" fill="#3b9480"/><circle cx="56" cy="40" r="20" fill="#6bb5a1"/><g fill="#f2a93b"><circle cx="34" cy="60" r="3.5"/><circle cx="66" cy="54" r="3.5"/><circle cx="52" cy="80" r="3.5"/></g></g></svg>
+
+      <!-- washing line with the children's clothes -->
+      <svg data-pri="5" width="150" height="120" viewBox="0 0 150 120">
+        <path d="M6 120V30M144 120V30" stroke="#8b6b4f" stroke-width="4" stroke-linecap="round"/>
+        <path d="M6 34Q75 50 144 34" fill="none" stroke="#9aa9ae" stroke-width="1.5"/>
+        <path class="sc-cloth" d="M22 38h16l7 6l-4 5l-4-2v17h-14v-17l-4 2l-4-5Z" fill="#f2a93b"/>
+        <path class="sc-cloth" style="animation-delay:-.6s" d="M52 41h16v9l-2 12h-5l-1-8l-1 8h-5l-2-12Z" fill="#2c3e50"/>
+        <path class="sc-cloth" style="animation-delay:-1.2s" d="M84 41h12l2 6l6 20h-28l6-20Z" fill="#ee9fb0"/>
+        <path class="sc-cloth" style="animation-delay:-.3s" d="M114 38h6v12h6v5h-12Z" fill="#6bb5a1"/>
+        <path class="sc-cloth" style="animation-delay:-.9s" d="M126 37h5v12h5v5h-10Z" fill="#ffd58a"/>
+        <g fill="#ab1a1f"><rect x="28" y="35" width="3" height="6" rx="1"/><rect x="58" y="38" width="3" height="6" rx="1"/><rect x="88" y="38" width="3" height="6" rx="1"/><rect x="118" y="35" width="3" height="6" rx="1"/></g>
+      </svg>
+
+      <!-- swing -->
+      <svg data-pri="2" width="140" height="160" viewBox="0 0 140 160">
+        <path d="M12 160L34 22L56 160M84 160L106 22L128 160" fill="none" stroke="#8b6b4f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M28 22H112" stroke="#8b6b4f" stroke-width="7" stroke-linecap="round"/>
+        <g class="sc-swing">
+          <path d="M60 24V116M80 24V116" stroke="#9aa9ae" stroke-width="2"/>
+          <path d="M76 116L92 122" stroke="#2c3e50" stroke-width="5" stroke-linecap="round"/>
+          <rect x="62" y="92" width="14" height="22" rx="6" fill="#ee9fb0"/>
+          <rect x="52" y="114" width="36" height="6" rx="3" fill="#ab1a1f"/>
+          <circle cx="70" cy="84" r="8.5" fill="#c98e64"/>
+          <path d="M61.5 83a8.5 8.5 0 0 1 17-1c-5-3-11-3-17 1Z" fill="#1f3034"/><circle cx="62" cy="80" r="3.5" fill="#1f3034"/>
+          <circle cx="74" cy="84" r="1.2" fill="#1f3034"/><path d="M72.5 88q2 1.5 4 0" stroke="#1f3034" stroke-width="1" fill="none"/>
+          <path d="M66 98L60 90M74 98L80 90" stroke="#c98e64" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </svg>
+
+      <!-- a child flying a wau (Malaysian kite) -->
+      <svg data-pri="1" width="140" height="210" viewBox="0 0 140 210">
+        <g transform="translate(26 210)">
+          <rect x="-6" y="-22" width="5" height="22" rx="2.5" fill="#1f3034"/><rect x="1" y="-22" width="5" height="22" rx="2.5" fill="#1f3034"/>
+          <rect x="-9" y="-28" width="18" height="10" rx="3" fill="#2c3e50"/>
+          <rect x="-9" y="-52" width="18" height="28" rx="7" fill="#f2a93b"/>
+          <path d="M-5-48L-9-34" stroke="#f1c9a5" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="0" cy="-62" r="10" fill="#f1c9a5"/>
+          <path d="M-10-63a10 10 0 0 1 20-1l-2 3c-5-5-12-5-18 0Z" fill="#3a2a20"/>
+          <circle cx="4" cy="-64" r="1.3" fill="#1f3034"/><path d="M3-58q2.5 2 5 0" stroke="#1f3034" stroke-width="1" fill="none"/>
+          <path d="M5-48L12-66" stroke="#f1c9a5" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g class="sc-kite">
+          <path d="M38 144C56 116 76 86 90 62" fill="none" stroke="#6e8087" stroke-width="1.2"/>
+          <g class="sc-kiteb">
+            <path d="M90 36C70 32 50 38 42 50C60 48 78 50 90 58C102 50 120 48 138 50C130 38 110 32 90 36Z" fill="#f2a93b"/>
+            <ellipse cx="90" cy="28" rx="6" ry="9" fill="#ab1a1f"/>
+            <path d="M90 20V84" stroke="#2c3e50" stroke-width="2"/>
+            <path d="M84 60h12l-2 8h-8Z" fill="#ab1a1f"/>
+            <path d="M62 72C70 90 110 90 118 72C106 82 74 82 62 72Z" fill="#ab1a1f"/>
+            <circle cx="68" cy="44" r="2.5" fill="#fff6e6"/><circle cx="112" cy="44" r="2.5" fill="#fff6e6"/>
+          </g>
+        </g>
+      </svg>
+
+      <!-- see-saw -->
+      <svg data-pri="3" width="180" height="120" viewBox="0 0 180 120">
+        <path d="M76 120L90 88L104 120Z" fill="#8b6b4f"/>
+        <g class="sc-seesaw">
+          <rect x="8" y="84" width="164" height="8" rx="4" fill="#f2a93b"/>
+          <path d="M36 84V72M144 84V72" stroke="#d98e1f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M26 86L32 98" stroke="#2c3e50" stroke-width="5" stroke-linecap="round"/>
+          <rect x="15" y="62" width="14" height="22" rx="6" fill="#3b9480"/>
+          <circle cx="22" cy="54" r="8.5" fill="#e8b48f"/><path d="M13.5 53a8.5 8.5 0 0 1 17-1c-5-3-11-3-17 1Z" fill="#1f3034"/>
+          <circle cx="26" cy="54" r="1.2" fill="#1f3034"/><path d="M24.5 58q2 1.5 4 0" stroke="#1f3034" stroke-width="1" fill="none"/>
+          <path d="M28 70L36 73" stroke="#e8b48f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M154 86L148 98" stroke="#2c3e50" stroke-width="5" stroke-linecap="round"/>
+          <rect x="151" y="62" width="14" height="22" rx="6" fill="#ee9fb0"/>
+          <circle cx="158" cy="54" r="8.5" fill="#c98e64"/><path d="M149.5 52a8.5 8.5 0 0 1 17 1c-6-3-12-3-17-1Z" fill="#1f3034"/><path d="M166 52c6 3 6 11 2 14c0-5-1-9-4-11Z" fill="#1f3034"/>
+          <circle cx="154" cy="54" r="1.2" fill="#1f3034"/><path d="M151.5 58q2 1.5 4 0" stroke="#1f3034" stroke-width="1" fill="none"/>
+          <path d="M152 70L144 73" stroke="#c98e64" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </svg>
+
+      <!-- vegetable garden: a child watering the plants -->
+      <svg data-pri="4" width="170" height="130" viewBox="0 0 170 130">
+        <rect x="52" y="104" width="116" height="26" rx="3" fill="#8b6b4f"/><rect x="52" y="100" width="116" height="8" rx="3" fill="#6b4f3a"/>
+        <g fill="#6bb5a1"><ellipse cx="72" cy="96" rx="9" ry="6"/><ellipse cx="90" cy="95" rx="9" ry="7"/></g><g fill="#3b9480"><ellipse cx="72" cy="97" rx="4" ry="3"/><ellipse cx="90" cy="96" rx="4" ry="3"/></g>
+        <g class="sc-sway"><path d="M124 101V52" stroke="#3b9480" stroke-width="3"/><path d="M124 82q-12-4-14 6q10 2 14-6Z" fill="#6bb5a1"/><circle cx="124" cy="48" r="12" fill="none" stroke="#ffd58a" stroke-width="7" stroke-dasharray="4 3"/><circle cx="124" cy="48" r="7" fill="#8b6b4f"/></g>
+        <g class="sc-sway" style="animation-delay:-1.8s"><path d="M152 101V66" stroke="#3b9480" stroke-width="3"/><path d="M152 86q10-4 12 5q-9 2-12-5Z" fill="#6bb5a1"/><circle cx="152" cy="62" r="9" fill="none" stroke="#f2a93b" stroke-width="6" stroke-dasharray="3.5 2.5"/><circle cx="152" cy="62" r="5" fill="#8b6b4f"/></g>
+        <g fill="#ee9fb0"><circle cx="104" cy="96" r="3"/><circle cx="110" cy="92" r="3"/></g>
+        <rect x="19" y="108" width="5" height="22" rx="2.5" fill="#1f3034"/><rect x="26" y="108" width="5" height="22" rx="2.5" fill="#1f3034"/>
+        <path d="M16 100H34L36 110H14Z" fill="#2c3e50"/>
+        <rect x="16" y="78" width="18" height="26" rx="7" fill="#3b9480"/>
+        <circle cx="25" cy="68" r="9.5" fill="#f1c9a5"/><path d="M15.5 67a9.5 9.5 0 0 1 19-1c-6-3-13-3-19 1Z" fill="#3a2a20"/>
+        <circle cx="29" cy="68" r="1.3" fill="#1f3034"/><path d="M27.5 72q2 1.5 4 0" stroke="#1f3034" stroke-width="1" fill="none"/>
+        <path d="M31 84L42 88" stroke="#f1c9a5" stroke-width="4" stroke-linecap="round"/>
+        <g transform="rotate(18 48 88)"><rect x="38" y="80" width="20" height="16" rx="3" fill="#ab1a1f"/><path d="M58 84L72 76" stroke="#ab1a1f" stroke-width="4" stroke-linecap="round"/><path d="M42 80a8 8 0 0 1 12 0" stroke="#ab1a1f" stroke-width="2.5" fill="none"/></g>
+        <g fill="#8ccbe8"><path class="sc-drop" d="M76 87q2 3 0 5q-2-2 0-5Z"/><path class="sc-drop" style="animation-delay:-.3s" d="M73 86q2 3 0 5q-2-2 0-5Z"/><path class="sc-drop" style="animation-delay:-.6s" d="M79 88q2 3 0 5q-2-2 0-5Z"/></g>
+      </svg>
+
+      <!-- bench with a cat -->
+      <svg data-pri="3" width="130" height="100" viewBox="0 0 130 100">
+        <path d="M18 100V66M112 100V66" stroke="#8b6b4f" stroke-width="5" stroke-linecap="round"/>
+        <path d="M14 40V66M116 40V66" stroke="#8b6b4f" stroke-width="5"/>
+        <rect x="8" y="40" width="114" height="6" rx="3" fill="#a67c52"/><rect x="8" y="50" width="114" height="6" rx="3" fill="#a67c52"/>
+        <rect x="8" y="62" width="114" height="8" rx="3" fill="#a67c52"/>
+        <path d="M22 62q8-6 14 0q6-6 14 0Z" fill="#fff" stroke="#a5d4c4" stroke-width="1.5"/>
+        <path class="sc-tail" d="M98 58C110 54 114 42 108 32" fill="none" stroke="#e0a050" stroke-width="5" stroke-linecap="round"/>
+        <ellipse cx="88" cy="51" rx="13" ry="11" fill="#e0a050"/>
+        <path d="M82 45q6 3 4 10M90 42q6 4 3 11" stroke="#c98a3a" stroke-width="2" fill="none"/>
+        <path d="M70 31l2-11l7 7ZM81 27l6-9l2 11Z" fill="#e0a050"/>
+        <circle cx="78" cy="36" r="9.5" fill="#e0a050"/>
+        <circle cx="74.5" cy="36" r="1.3" fill="#1f3034"/><circle cx="81" cy="36" r="1.3" fill="#1f3034"/>
+      </svg>
+
+      <!-- tree -->
+      <svg data-pri="5" width="100" height="170" viewBox="0 0 100 170"><g class="sc-sway" style="animation-delay:-2s"><rect x="45" y="96" width="10" height="74" rx="4" fill="#8b6b4f"/><circle cx="50" cy="62" r="36" fill="#6bb5a1"/><circle cx="26" cy="84" r="22" fill="#3b9480"/><circle cx="74" cy="82" r="24" fill="#3b9480"/><circle cx="56" cy="40" r="20" fill="#6bb5a1"/><g fill="#ee9fb0"><circle cx="34" cy="60" r="3.5"/><circle cx="66" cy="54" r="3.5"/><circle cx="52" cy="80" r="3.5"/></g></g></svg>
+
+      <!-- bush -->
+      <svg data-pri="6" width="80" height="50" viewBox="0 0 80 50"><ellipse cx="24" cy="36" rx="22" ry="14" fill="#3b9480"/><ellipse cx="54" cy="34" rx="24" ry="16" fill="#6bb5a1"/><ellipse cx="40" cy="26" rx="16" ry="12" fill="#3b9480"/><g fill="#ffd58a"><circle cx="22" cy="30" r="3"/><circle cx="48" cy="22" r="3"/><circle cx="62" cy="34" r="3"/></g></svg>
+    </div>
+
+    <!-- the caregiver walking two children, left to right across the whole screen -->
+    <div class="sc-track sc-walktrack">
+      <svg class="sc-walkers" viewBox="0 0 150 100">
+        <g class="wk-bob">
+          <g class="wk-leg"><rect x="23" y="80" width="5" height="17" rx="2.5" fill="#2c3e50"/></g>
+          <g class="wk-leg b"><rect x="29" y="80" width="5" height="17" rx="2.5" fill="#1f3034"/></g>
+          <rect x="21" y="74" width="15" height="10" rx="2" fill="#2c3e50"/>
+          <rect x="13" y="56" width="10" height="17" rx="3.5" fill="#2e7d6b"/>
+          <rect x="21" y="55" width="15" height="22" rx="6" fill="#fff" stroke="#a5d4c4" stroke-width="1.5"/>
+          <path d="M33 61L46 62" stroke="#c98e64" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="29" cy="47" r="8.5" fill="#c98e64"/>
+          <path d="M20.5 46a8.5 8.5 0 0 1 17-1c-5-3-11-3-17 1Z" fill="#1f3034"/>
+          <circle cx="33" cy="47" r="1.2" fill="#1f3034"/><path d="M31.5 51q2 1.5 4 0" stroke="#1f3034" stroke-width="1" fill="none"/>
+        </g>
+        <g class="wk-bob">
+          <g class="wk-leg b"><rect x="60" y="72" width="5" height="25" rx="2.5" fill="#1f3034"/></g>
+          <g class="wk-leg"><rect x="67" y="72" width="5" height="25" rx="2.5" fill="#2c3e50"/></g>
+          <path d="M57 30h18l7 46h-32Z" fill="#3b9480"/>
+          <path d="M53 52h26" stroke="#2e7d6b" stroke-width="3"/>
+          <path d="M60 33L46 62" stroke="#c98e64" stroke-width="4" stroke-linecap="round"/>
+          <path d="M73 33L94 58" stroke="#c98e64" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="66" cy="18" r="9.5" fill="#c98e64"/>
+          <path d="M56.5 17a9.5 9.5 0 0 1 19-1c-5-4-14-4-19 1Z" fill="#1f3034"/>
+          <circle cx="57" cy="12" r="5" fill="#1f3034"/>
+          <circle cx="70.5" cy="18" r="1.3" fill="#1f3034"/><path d="M69 22.5q2 1.5 4 0" stroke="#1f3034" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </g>
+        <g class="wk-bob">
+          <g class="wk-leg"><rect x="102" y="76" width="5" height="21" rx="2.5" fill="#1f3034"/></g>
+          <g class="wk-leg b"><rect x="109" y="76" width="5" height="21" rx="2.5" fill="#2c3e50"/></g>
+          <rect x="93" y="50" width="11" height="19" rx="4" fill="#ab1a1f"/>
+          <path d="M100 68H116L119 80H97Z" fill="#2c3e50"/>
+          <rect x="99" y="48" width="18" height="26" rx="7" fill="#fff" stroke="#a5d4c4" stroke-width="1.5"/>
+          <path d="M103 50V70M113 50V70" stroke="#2c3e50" stroke-width="3"/>
+          <path d="M102 54L94 58" stroke="#e8b48f" stroke-width="3.8" stroke-linecap="round"/>
+          <path class="wk-arm" d="M116 55L123 66" stroke="#e8b48f" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+          <circle cx="108" cy="38" r="9.5" fill="#e8b48f"/>
+          <path d="M98.5 38a9.5 9.5 0 0 1 19-2c-6-4-12-4-15 3Z" fill="#1f3034"/>
+          <path d="M99 34c-9 2-10 12-5 16c0-6 2-9 6-11Z" fill="#1f3034"/>
+          <circle cx="112.5" cy="38" r="1.3" fill="#1f3034"/><path d="M111 42q2 1.5 4 0" stroke="#1f3034" stroke-width="1" fill="none"/>
+        </g>
+      </svg>
     </div>
   </div>
 </section>
@@ -1161,6 +1452,25 @@ burger.addEventListener('click', () => { burger.classList.toggle('open'); mob.cl
 mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { burger.classList.remove('open'); mob.classList.remove('open'); }));
 window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
 
+/* "Children Home" label beside the logo: full label when it fits, two lines when space is tight,
+   hidden only on very narrow screens (the big hero title names the home there) */
+(function(){
+  const row = hdr.querySelector('.hdr');
+  const logo = hdr.querySelector('.brand img');
+  const over = () => row.scrollWidth > row.clientWidth + 1;
+  function fit(){
+    hdr.classList.remove('bt-compact', 'bt-hide');
+    if (over()) hdr.classList.add('bt-compact');
+    if (over()) hdr.classList.add('bt-hide');
+  }
+  let raf = 0;
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); }, { passive: true });
+  if (logo && !logo.complete) logo.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.fitBrandTag = fit;
+  fit();
+})();
+
 /* Active nav link follows the section in view */
 (function(){
   const links = [...document.querySelectorAll('.nav a')];
@@ -1338,6 +1648,48 @@ document.querySelectorAll('.mfaq-card').forEach(card => {
   });
 });
 
+/* ═══ Animated scene ═══ */
+/* Lay out the Children Home scene so nothing is ever cropped.
+   Scenery keeps its real size; on narrower screens the least important pieces are hidden
+   (data-pri: higher hides first), and on phones what remains is gently scaled down.
+   The walking speed is set from the screen width so the group always strolls at the same pace. */
+(function(){
+  const scene = document.querySelector('.scene');
+  if (!scene) return;
+  const props = [...scene.querySelectorAll('.sc-props > [data-pri]')];
+  const GAP = 28, KMIN = .66;
+  function layout(){
+    const W = scene.clientWidth;
+    props.forEach(p => p.style.display = '');
+    let vis = props.slice();
+    const need = () => vis.reduce((sum, p) => sum + (+p.getAttribute('width')), 0) + GAP * (vis.length + 1);
+    const drop = minPri => {
+      const c = vis.filter(p => +p.dataset.pri >= minPri);
+      if (!c.length) return false;
+      const victim = c.reduce((a, b) => (+b.dataset.pri >= +a.dataset.pri ? b : a));
+      victim.style.display = 'none';
+      vis = vis.filter(p => p !== victim);
+      return true;
+    };
+    while (need() > W && drop(3)) {}
+    while (need() * KMIN > W && drop(2)) {}
+    const k = Math.min(1, W / need());
+    scene.style.setProperty('--k', k.toFixed(3));
+    scene.style.setProperty('--kw', Math.max(.75, k).toFixed(3));
+    scene.style.setProperty('--walk', ((W + 400) / 48).toFixed(1) + 's');
+  }
+  let raf = 0;
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(layout); }, { passive: true });
+  layout();
+})();
+
+/* Pause the scene while it is off screen */
+(function(){
+  const scene = document.querySelector('.scene');
+  if (!scene || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(es => es.forEach(e => scene.classList.toggle('sc-paused', !e.isIntersecting)), { rootMargin: '100px' }).observe(scene);
+})();
+
 /* ── English / 中文 switch (same mechanism as Elder Home lang.js) ── */
 (function(){
   const ZH = {
@@ -1345,8 +1697,10 @@ document.querySelectorAll('.mfaq-card').forEach(card => {
     'nav.home': '首页', 'nav.care': '我们的照护', 'nav.about': '关于我们', 'nav.stories': '成功故事',
     'nav.moments': '温馨时刻', 'nav.faq': '常见问题', 'nav.seekHelp': '寻求帮助', 'nav.donate': '捐款', 'nav.donateNow': '立即捐款',
 
-    'hero.eyebrow': '创立于 2010 年 · 新山',
-    'hero.h1': '安心成长的家，<br><em>值得相信的未来</em>。',
+    'brand.tag': '儿童小屋',
+    'hero.eyebrow': '阿弥陀佛援助总会 · 新山',
+    'hero.name': '儿童小屋', 'hero.altname': 'Children Home',
+    'hero.tagline': '安心成长的家，值得相信的未来。',
     'hero.sub': '自2010年以来，阿弥陀佛援助总会儿童小屋为孤儿和弱势儿童提供安全温暖的家、完整的教育，以及迈向光明未来所需的关怀与照顾。',
     'hero.c1.title': '了解我们的照护', 'hero.c1.body': '住所与日常照顾、教育与课业支持、情感与社交发展——孩子茁壮成长所需的一切。', 'hero.c1.link': '查看我们的计划',
     'hero.c2.title': '联系我们', 'hero.c2.body': '想资助孩子、当义工或预约探访？欢迎通过 WhatsApp 与我们联系。', 'hero.c2.link': 'WhatsApp 咨询',
@@ -1484,6 +1838,9 @@ document.querySelectorAll('.mfaq-card').forEach(card => {
     document.documentElement.lang = lang === 'zh' ? 'zh' : 'en';
     document.querySelectorAll('.lang-toggle').forEach(b => b.textContent = lang === 'zh' ? 'EN' : '中文');
     document.querySelectorAll('.mfaq-card.open .mfaq-a').forEach(a => a.style.maxHeight = a.scrollHeight + 'px');
+    /* the second name beside the big title is always the other language */
+    document.querySelectorAll('.hero-name-alt').forEach(el => el.lang = lang === 'zh' ? 'en' : 'zh');
+    if (window.fitBrandTag) window.fitBrandTag();
     store('site_lang', lang);
   }
   if (store('site_lang') === 'zh') apply('zh');
